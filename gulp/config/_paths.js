@@ -7,6 +7,7 @@
 var themeDir = process.cwd() + '/';
 // Global
 global.paths = {
+  relative: './',
   themeDir: themeDir,
   js: themeDir + '/components/_patterns/**/*.js',
   js_globals: themeDir + '/js/**/*.js',

@@ -12,8 +12,8 @@ global.config.patternLab = {
   watchedExtensions: (['twig', 'json', 'yaml', 'yml', 'md', 'jpg', 'jpeg', 'png']),
   scssToJson: [
     {
-      src: paths.themeDir + 'components/_patterns/00-base/03-colors/_color-vars.scss',
-      dest: paths.themeDir + 'components/_patterns/00-base/03-colors/colors.json',
+      src: paths.relative + 'components/_patterns/00-base/03-colors/_color-vars.scss',
+      dest: paths.relative + 'components/_patterns/00-base/03-colors/colors.json',
       lineStartsWith: '$',
       allowVarValues: false
     }
