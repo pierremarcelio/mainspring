@@ -11,8 +11,8 @@ global.paths = {
   js: themeDir + '/components/_patterns/**/*.js',
   sass: themeDir,
   img: themeDir + '/images',
-  dist_js: themeDir + '/dist',
-  dist_css: themeDir + '/dist/css',
-  dist_img: themeDir + '/dist/img',
-  dist_svg: themeDir + '/svg'
+  dist_js: themeDir + '/assets/js',
+  dist_css: themeDir + '/assets/css',
+  dist_img: themeDir + '/assets/img',
+  dist_svg: themeDir + '/assets/svg'
 };
