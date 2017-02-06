@@ -63,13 +63,9 @@
     {
       "name": "$red",
       "value": "#a00000"
-    },
-    {
-      "name": "$palettes",
-      "value": "("
     }
   ],
   "meta": {
-    "description": "To add to these items, use Sass variables that start with <code>$</code> in <code>./components/_patterns/00-base/03-colors/_color-vars.scss</code>"
+    "description": "To add to these items, use Sass variables that start with <code>$</code> in <code>./components/_patterns/00-base/03-colors/_00-colors__vars.scss</code>"
   }
 }
