@@ -19,10 +19,10 @@ global.config.svg = {
   keepAttributesSrc: svgKeepAttrsGlob,
   dest: paths.dist_svg,
   watcher: false,
-  gzipFormat: 'svgz',
+  gzipFormat: 'svg.gz',
   //
   sizeReport: {
-    enabled: false,
+    enabled: true,
     options: {
       '*': {
         'maxSize': 50000 // Alert if > Max Size in Bytes after gzip
@@ -53,11 +53,10 @@ global.config.svg = {
     mode: {
       css: {
         bust: false,
-        dest: '../../dist',
         prefix: '@mixin sprite-%s',
         render: {
           scss: {
-            dest: '../components/_patterns/01-atoms/image/icons/_icon_sprite.scss',
+            dest: '../components/_patterns/01-atoms/icons/_icon_sprite.scss',
             template: './gulp/lib/svg-icons/sprite.scss.handlebars'
           }
         }

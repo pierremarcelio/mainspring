@@ -12,7 +12,10 @@ var fs = require('fs');
 var _ = {
   debounce: require('lodash/debounce'),
   filter: require('lodash/filter'),
+  includes: require('lodash/includes'),
+  isArray: require('lodash/isArray'),
   map: require('lodash/map'),
+  reject: require('lodash/reject'),
   startsWith: require('lodash/startsWith'),
 };
 // Globals
@@ -69,8 +72,10 @@ var plFullDependencies = [];
 if (config.patternLab.scssToJson) {
   // turns scss files full of variables into json files that PL can iterate on
   gulp.task('pl:scss-to-json', function (done) {
-    console.log(config.patternLab.scssToJson);
-    config.patternLab.scssToJson.forEach(function (pair) {
+    var scssToJson = config.patternLab.scssToJson;
+    // console.log(scssToJson);
+
+    scssToJson.forEach(function (pair) {
       var tempalteFile = fs.readFileSync(pair.src, 'utf8').split('\n');
       var scssVarList = _.filter(tempalteFile, function (item) {
         return _.startsWith(item, pair.lineStartsWith);
@@ -84,11 +89,13 @@ if (config.patternLab.scssToJson) {
         };
       });
 
-      if (!pair.allowVarValues) {
-        varsAndValues = _.filter(varsAndValues, function (item) {
-          return !_.startsWith(item.value, '$');
-        });
-      }
+      // Process results that should be scrubbed out
+      varsAndValues = _.reject(varsAndValues, function (item) {
+        // Filter out variables if not to be included
+        return (!pair.allowVarValues && _.startsWith(item.value, '$')) ||
+          // Filter out specific vars if needed
+          (_.isArray(pair.excludeVars) && _.includes(pair.excludeVars, item.name));
+      });
 
       fs.writeFileSync(pair.dest, JSON.stringify({
         items: varsAndValues,

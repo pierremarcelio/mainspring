@@ -7,8 +7,9 @@
 var paths = global.paths;
 global.config.sass = {
   enabled: true,
-  src: paths.themeDir + '/components/_patterns/**/*.scss',
-  dest: paths.themeDir + '/dist/',
+  src: paths.themeDir + '/components/_patterns/*.scss',
+  watchSrc: paths.themeDir + '/components/_patterns/**/*.scss',
+  dest: paths.dist_folder,
   flattenDestOutput: true,
   lint: {
     enabled: false,
@@ -30,7 +31,7 @@ global.config.sass = {
   includePaths: (['./node_modules']),
   docs: {
     enabled: true,
-    dest: paths.themeDir + '/dist/sassdoc',
+    dest: paths.dist_folder + '/sassdoc',
     verbose: false,
     sort: [
       'file',

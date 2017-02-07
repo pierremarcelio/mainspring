@@ -47,6 +47,6 @@ $palettes: (
     @return $color;
   } @else {
 
-    @error "#{$tone} is not a valid tone in #{$palette} pallette ";
+    @error '#{$tone} is not a valid tone in #{$palette} pallette';
   }
 }

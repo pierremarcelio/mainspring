@@ -19,8 +19,8 @@ $grey-xxxlight: #f2f2f2;
 $blue: #3f3fb1;
 $blue-xdark: #232361;
 $blue-dark: #292971;
-$blue-light: #7373C6;
-$blue-xlight: #B9B9E2;
+$blue-light: #7373c6;
+$blue-xlight: #b9b9e2;
 
 // Red
 $red: #a00000;
@@ -36,7 +36,7 @@ $red: #a00000;
 
 
 // Colors Vars as Maps
-// scss-lint:disable ColorVariable
+
 $palettes: (
   grey: (
     base: $grey,

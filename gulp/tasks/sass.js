@@ -110,6 +110,6 @@ tasks.validate.push('sass:lint');
  * Watchers
  ************************************************************/
 gulp.task('sass:watch', function () {
-  return gulp.watch(config.sass.src, sassTasks);
+  return gulp.watch(config.sass.watchSrc, sassTasks);
 });
 tasks.watch.push('sass:watch');

@@ -1,22 +1,22 @@
 // Start libs
-// Better style reset
-@import "normalize";
-// Grid system, https://github.com/at-import/Singularity
-@import "singularitygs/stylesheets/singularitygs";
-// A cleaner way to do breakpoints/media queries, http://breakpoint-sass.com/
-@import "breakpoint-sass/stylesheets/breakpoint";
 
-@import "sass-toolkit/stylesheets/toolkit";
+// Grid system, https://github.com/at-import/Singularity
+@import 'singularitygs/stylesheets/singularitygs';
+// A cleaner way to do breakpoints/media queries, http://breakpoint-sass.com/
+@import 'breakpoint-sass/stylesheets/breakpoint';
+
+@import 'sass-toolkit/stylesheets/toolkit';
 // End libs
 
-@import "00-base/**/*.scss";
-@import "01-atoms/**/*.scss";
-@import "02-molecules/**/*.scss";
-@import "03-organisms/**/*.scss";
-@import "04-layouts/**/*.scss";
-@import "06-scope/**/*.scss";
-@import "07-utilities/**/*.scss";
-// @import "04-templates/**/*.scss";
-// @import "05-pages/**/*.scss";
+
+// sass-lint:disable clean-import-paths
+@import '00-base/**/*.scss';
+@import '01-atoms/**/*.scss';
+@import '02-molecules/**/*.scss';
+@import '03-organisms/**/*.scss';
+@import '04-layouts/**/*.scss';
+@import '06-scope/**/*.scss';
+@import '07-utilities/**/*.scss';
+// sass-lint:enable clean-import-paths
 
 

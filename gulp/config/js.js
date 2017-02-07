@@ -6,8 +6,11 @@
 // Globals
 var paths = global.paths;
 global.config.js = {
-  src: paths.js,
-  dest: paths.themeDir + '/dist/',
+  src: [
+    paths.js,
+    paths.js_globals
+  ],
+  dest: paths.dist_folder + '/js/',
   sourceMapEmbed: true,
   hint: {
     enabled: false,

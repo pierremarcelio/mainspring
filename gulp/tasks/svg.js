@@ -22,7 +22,7 @@ gulp.task('svg:icons', 'Build a full scss mixin & sprite file based on all avail
   function () {
     return gulp.src(config.svg.src)
       .pipe(gulp.$.svgSprite(config.svg.iconConfig))
-      .pipe(gulp.dest(config.svg.dest));
+      .pipe(gulp.dest('./components/_patterns/01-atoms/icons/_icon_sprite.scss'));
   }
 );
 
