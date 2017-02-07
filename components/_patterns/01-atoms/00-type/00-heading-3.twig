@@ -1,1 +1,5 @@
-<h3 class="a-type__h3{% if h3_variation %}--{{ h3_variation }}{% endif %}">{{ heading }}</h3>
+<h3 class="a-type__h3{{ h3_variation }}">
+{% if path %} <a href="{{ path }}"> {% endif %}
+  {{ heading }}
+{% if path %} </a> {% endif %}
+</h3>

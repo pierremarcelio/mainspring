@@ -12,7 +12,7 @@ global.config.sass = {
   dest: paths.dist_folder,
   flattenDestOutput: true,
   lint: {
-    enabled: false,
+    enabled: true,
     failOnError: true
   },
   sassOptions: {

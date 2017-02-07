@@ -4,6 +4,7 @@
   "bodyClass": "b-body",
   "base_path": "",
   "directory": "",
+  "dist_path": "/assets",
   "img": {
     "landscape_4x3": {
       "src": "../../images/fpo_4x3.png",

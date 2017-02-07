@@ -58,7 +58,7 @@ gulp.task('sass:clean', 'Delete compiled CSS files', function (done) {
 });
 
 gulp.task('sass:lint', 'Lint Scss files', function () {
-  var src = config.sass.src;
+  var src = config.sass.watchSrc;
   if (config.sass.lint.extraSrc) {
     src = src.concat(config.sass.lint.extraSrc);
   }

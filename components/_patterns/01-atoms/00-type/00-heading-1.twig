@@ -1,5 +1,11 @@
+
 {{ title_prefix }}
-{% if heading %}
-  <h1 class="a-type__h1{% if h1_variation %}--{{ h1_variation }}{% endif %}">{{ heading }}</h1>
-{% endif %}
+  {% if heading %}
+    <h1 class="a-type__h1{{ h1_variation }}">
+    {% if path %} <a href="{{ path }}"> {% endif %}
+      {{ heading }}
+    {% if path %} </a> {% endif %}
+    </h1>
+  {% endif %}
 {{ title_suffix }}
+

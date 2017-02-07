@@ -1,43 +1,67 @@
-
-
-%heading-font {
+%heading-core {
+  color: $color-primary-dark;
   font-family: $title-font-family;
   font-weight: $title-font-weight;
 }
 
+%heading-link {
+  a {
+    text-decoration: underline;
+    color: $color-primary-dark;
+
+    &:focus {
+      background-color: $color-primary-xxlight;
+    }
+
+    &:hover,
+    &:active {
+      color: $color-secondary-dark;
+    }
+  }
+}
+
 .a-type__h1,
 %a-type__h1 {
-  @extend %heading-font;
+  @extend %heading-core;
+  @extend %heading-link;
   @include font-size($h1-font-sizes);
 }
 
+.a-type__h1--h2-appearance,
+%a-type__h1--h2-appearance {
+  @extend %heading-core;
+  @extend %heading-link;
+  @include font-size($h2-font-sizes);
+}
+
+
 .a-type__h2,
 %a-type__h2 {
-  @extend %heading-font;
+  @extend %heading-core;
   @include font-size($h2-font-sizes);
 }
 
 .a-type__h3,
 %a-type__h3 {
-  @extend %heading-font;
+  @extend %heading-core;
   @include font-size($h3-font-sizes);
 }
 
 .a-type__h4,
 %a-type__h4 {
-  @extend %heading-font;
+  @extend %heading-core;
   @include font-size($h4-font-sizes);
 }
 
 .a-type__h5,
 %a-type__h5 {
-  @extend %heading-font;
+  @extend %heading-core;
   @include font-size($h5-font-sizes);
 }
 
 .a-type__h6,
 %a-type__h6 {
-  @extend %heading-font;
+  @extend %heading-core;
   @include font-size($h6-font-sizes);
 }
 
