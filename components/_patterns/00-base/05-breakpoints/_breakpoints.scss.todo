@@ -1,0 +1,61 @@
+// Breakpoints and Grid Variables
+//
+// Default breakpoints.
+//
+// <pre>expanded-wrapper  =>   400px</pre>
+// <pre>type-large        =>   600px</pre>
+// <pre>full-nav          =>   900px</pre>
+// <pre>max-size          =>  1200px</pre>
+//
+// Styleguide 1.3
+
+
+/**
+ * Breakpoint Configuration
+ * @see https://github.com/Team-Sass/breakpoint/wiki
+ *
+ */
+
+
+// Breakpoint Variables
+@include breakpoint-set('no query fallbacks', true);
+@include breakpoint-set('to ems', true);
+
+// Don't forget to update the theme .info file breakpoints!
+
+$bp-expanded-wrapper: 400px; // Add some padding to outer margins
+$bp-type-large: 600px; // Typography goes from smaller to large size
+$bp-full-nav: 900px; // Full Nav appears
+$bp-max: 1200px; // Max width of outer container
+
+
+// Respond-to Syntax creates a map of breakpoints named after UI changes
+@include add-breakpoint('expanded-wrapper', $bp-expanded-wrapper);
+@include add-breakpoint('type-large', $bp-type-large);
+@include add-breakpoint('full-nav', $bp-full-nav);
+@include add-breakpoint('max', $bp-max);
+
+// Range Breakpoints Examples
+
+// $bp-type-large-to-full-nav: $bp-type-large ($bp-full-nav - 1px);
+// $breakpoints: add-breakpoint('type-large to full-nav', $bp-type-large-to-full-nav);
+
+
+// Singularity Variables
+// https://github.com/Team-Sass/Singularity/wiki/Creating-Grids
+//
+
+
+//Defines default 12 column grid
+@include add-grid(12);
+@include add-gutter-style('fixed');
+@include add-gutter-style('split');
+@include add-gutter(0);
+
+
+// // Must enable debug setting
+@include sgs-change('debug', true);
+
+
+
+

@@ -1,0 +1,41 @@
+// HTML / Body
+//
+// Default @viewport for responsive.
+//
+// Default HTML / Body resets. Body has Flex display to allow footer (or main) to scale full hieght of viewport
+//
+// Styleguide 1.5
+
+// @todo documentation.
+// @url https://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
+// @url https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7970618/
+
+@viewport {
+  width: device-width;
+}
+
+html {
+  line-height: ($base-line-height / $base-font-size) * 1em;
+  font-family: $base-font-family;
+  font-size: ($base-font-size / 16px) * 100%;
+  box-sizing: border-box;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+// @see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  // Use Flex display to allow footer (or body) to scale full hieght of viewport
+  display: flex;
+  flex-direction: column;
+  // Remove UA default margin.
+  margin: 0;
+  height: 100%;
+  min-height: 100vh;
+}
