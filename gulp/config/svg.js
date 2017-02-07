@@ -53,11 +53,10 @@ global.config.svg = {
     mode: {
       css: {
         bust: false,
-        dest: paths.dist_svg,
         prefix: '@mixin sprite-%s',
         render: {
           scss: {
-            dest: '../components/_patterns/01-atoms/icons/_icon_sprite.scss',
+            // dest: '../components/_patterns/01-atoms/icons/_icon_sprite.scss',
             template: './gulp/lib/svg-icons/sprite.scss.handlebars'
           }
         }
