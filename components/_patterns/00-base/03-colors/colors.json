@@ -54,11 +54,11 @@
     },
     {
       "name": "$blue-light",
-      "value": "#7373C6"
+      "value": "#7373c6"
     },
     {
       "name": "$blue-xlight",
-      "value": "#B9B9E2"
+      "value": "#b9b9e2"
     },
     {
       "name": "$red",

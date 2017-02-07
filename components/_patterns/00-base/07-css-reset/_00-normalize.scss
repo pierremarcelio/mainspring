@@ -1,7 +1,5 @@
 // sass-lint:disable-all
 
-// Vendor: Normalize
-//
 // Hacked version of Normalize used as a base reset. Last Duplicated w/ v5.0.3
 // https://github.com/JohnAlbin/normalize-scss
 
@@ -58,8 +56,6 @@ progress,
 video {
   display: inline-block; /* 1 */
   vertical-align: baseline; /* 2 */
-
-  // Yay - Breaks Sass Compiler!
 
   // @if $legacy_browser_support {
   //   *display: inline;
@@ -228,10 +224,10 @@ sub {
 
 img {
   border-style: none;
-  @if support-for(ie, 7) {
-    /* Improve image quality when scaled in IE 7. */
-    -ms-interpolation-mode: bicubic;
-  }
+  // @if support-for(ie, 7) {
+  //   /* Improve image quality when scaled in IE 7. */
+  //   -ms-interpolation-mode: bicubic;
+  // }
 }
 
 /**
@@ -516,6 +512,5 @@ th {
   padding: 0;
 }
 
-
-
 // sass-lint:enable-all
+

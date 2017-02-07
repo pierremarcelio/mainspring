@@ -1,8 +1,13 @@
-/// Strips unit
+/// Strips unit - emove the unit of a length
 /// @example
 ///   $length : 42em;
 ///   $int    : strip-unit($length); // 42
-/// @param {string} $value
-@function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
 }

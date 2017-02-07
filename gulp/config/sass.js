@@ -7,11 +7,12 @@
 var paths = global.paths;
 global.config.sass = {
   enabled: true,
-  src: paths.themeDir + '/components/_patterns/**/*.scss',
+  src: paths.themeDir + '/components/_patterns/*.scss',
+  watchSrc: paths.themeDir + '/components/_patterns/**/*.scss',
   dest: paths.dist_folder,
   flattenDestOutput: true,
   lint: {
-    enabled: true,
+    enabled: false,
     failOnError: true
   },
   sassOptions: {
