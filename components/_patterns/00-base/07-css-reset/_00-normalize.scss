@@ -1,3 +1,5 @@
+// sass-lint:disable-all
+
 // Vendor: Normalize
 //
 // Hacked version of Normalize used as a base reset. Last Duplicated w/ v5.0.3
@@ -56,10 +58,13 @@ progress,
 video {
   display: inline-block; /* 1 */
   vertical-align: baseline; /* 2 */
-  @if $legacy_browser_support {
-    *display: inline;
-    *zoom: 1;
-  }
+
+  // Yay - Breaks Sass Compiler!
+
+  // @if $legacy_browser_support {
+  //   *display: inline;
+  //   *zoom: 1;
+  // }
 }
 
 /**
@@ -512,7 +517,5 @@ th {
 }
 
 
-.foo {
-  @include ir (12/3);
-}
 
+// sass-lint:enable-all

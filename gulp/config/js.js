@@ -10,7 +10,7 @@ global.config.js = {
     paths.js,
     paths.js_globals
   ],
-  dest: paths.themeDir + '/dist/',
+  dest: paths.dist_folder + '/js/',
   sourceMapEmbed: true,
   hint: {
     enabled: false,
