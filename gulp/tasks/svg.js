@@ -18,13 +18,15 @@ var browserSync = global.browserSync;
 /*************************************************************
  * Operations
  ************************************************************/
-gulp.task('svg:icons', 'Build a full scss mixin & sprite file based on all available svg icons',
-  function () {
-    return gulp.src(config.svg.src)
-      .pipe(gulp.$.svgSprite(config.svg.iconConfig))
-      .pipe(gulp.dest('./components/_patterns/01-atoms/icons/_icon_sprite.scss'));
-  }
-);
+
+// REMOVING UNTILL THE SAME SVG CAN BE USED as
+// gulp.task('svg:icons', 'Build a full scss mixin & sprite file based on all available svg icons',
+//   function () {
+//     return gulp.src(config.svg.src)
+//       .pipe(gulp.$.svgSprite(config.svg.iconConfig))
+//       .pipe(gulp.dest('./'));
+//   }
+// );
 
 gulp.task('svg:delete', 'Step 1 - Delete the SVG destination folder\'s contents',
   function () {
@@ -99,7 +101,8 @@ gulp.task('svg:sprite', 'Step 5 - Export SVGz gzipped files for better compressi
 /*************************************************************
  * Builders
  ************************************************************/
-gulp.task('svg', 'Execute all SVG related tasks', ['svg:icons', 'svg:sprite']);
+gulp.task('svg', 'Execute all SVG related tasks', ['svg:sprite']); // Removed Icon Task for now
+// gulp.task('svg', 'Execute all SVG related tasks', ['svg:icons', 'svg:sprite']);
 tasks.compile.push('svg');
 
 /*************************************************************
