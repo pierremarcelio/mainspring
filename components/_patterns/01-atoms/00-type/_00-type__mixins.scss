@@ -22,7 +22,7 @@
         $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
       }
 
-      @include breakpoint ($fs-breakpoint) {
+      @include respond-to ($fs-breakpoint) {
         @include make-font-size($fs-font-size);
       }
     }
