@@ -1,4 +1,4 @@
-$breadcrumb-active: #bbb;
+$breadcrumb-active: #bbbbbb;
 
 .breadcrumb {
   // @include list-reset;
@@ -9,8 +9,8 @@ $breadcrumb-active: #bbb;
 .breadcrumb__link:link,
 .breadcrumb__link:visited,
 .breadcrumb__link:focus {
-  color: $color-primary-light;
   text-decoration: none;
+  color: $color-primary-light;
 }
 
 .breadcrumb__link:hover {
@@ -19,21 +19,23 @@ $breadcrumb-active: #bbb;
 
 .breadcrumb__item {
   display: inline-block;
-  font-size: .75rem;
+  font-size: 0.75rem;
 
   &::after {
-    content: "/";
+    content: '/';
   }
 
   &:last-child {
     color: $breadcrumb-active;
 
     &::after {
-      content: "";
+      content: '';
     }
   }
 }
 
-.breadcrumb_link:active {
-  color: $breadcrumb-active;
+.breadcrumb__link {
+  &:active {
+    color: $breadcrumb-active;
+  }
 }

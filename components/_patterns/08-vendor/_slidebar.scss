@@ -1,3 +1,5 @@
+// sass-lint:disable-all
+
 /* -----------------------------------
  * Slidebars
  * Version 0.10.3
@@ -212,3 +214,6 @@ html.sb-static .sb-slidebar,
 .sb-hide {
   display: none; /* Optionally applied to control classes when Slidebars is disabled over a certain width. */
 }
+
+
+// sass-lint:enable-all

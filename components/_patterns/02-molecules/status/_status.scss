@@ -1,23 +1,23 @@
 // See http://refills.bourbon.io/components/#flashes.
 $base-spacing: 1.5em !default;
 $statuses: (
-  "warning": #f9fb93,
-  "error": #fbe3e4,
-  "status": #cfefc2,
+  'warning': #f9fb93,
+  'error': #fbe3e4,
+  'status': #cfefc2,
 ) !default;
 
 @each $status-type, $color in $statuses {
   .status--#{$status-type} {
-    background-color: $color;
-    color: shade($color, 60%);
     display: block;
     margin-bottom: $base-spacing / 2;
+    background-color: $color;
     padding: $base-spacing / 2;
     text-align: center;
+    color: shade($color, 60%);
 
     a {
-      color: shade($color, 70%);
       text-decoration: underline;
+      color: shade($color, 70%);
 
       &:focus,
       &:hover {
@@ -26,8 +26,8 @@ $statuses: (
     }
 
     .placeholder {
-      font-style: normal;
       font-weight: 800;
+      font-style: normal;
     }
   }
 }

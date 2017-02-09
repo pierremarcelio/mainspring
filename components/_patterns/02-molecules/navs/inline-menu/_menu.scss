@@ -3,7 +3,7 @@
 }
 
 .menu__item {
-  margin: 0 1em .5em 0;
+  margin: 0 1em 0.5em 0;
 
   // @include medium {
   //   display: inline;
@@ -17,8 +17,8 @@
 
 .menu__link {
   // @include font-size(.75);
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-decoration: none;
   text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1.5px;
+  font-weight: 600;
 }
