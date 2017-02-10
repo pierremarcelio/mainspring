@@ -13,11 +13,11 @@ global.config.js = {
     presets: ['es2015'],
   },
   hint: {
-    enabled: true,
+    enabled: false,
     src: paths.js,
   },
   lint: {
-    enabled: true,
+    enabled: false,
     src: paths.js,
     options: {
       path: paths.themeDir + '.eslint.js'
