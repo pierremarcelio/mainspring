@@ -1,32 +1,17 @@
-(function () {
+/* globals jQuery, document */
 
-  'use strict';
-
-  var el = document.querySelectorAll('.tabs');
-  var tabNavigationLinks = document.querySelectorAll('.tabs__link');
-  var tabContentContainers = document.querySelectorAll('.tabs__tab');
-  var activeIndex = 0;
-
-  /**
-   * handleClick
-   * @description Handles click event listeners on each of the links in the
-   *   tab navigation. Returns nothing.
-   * @param {HTMLElement} link The link to listen for events on
-   * @param {Number} index The index of that link
-   */
-  var handleClick = function (link, index) {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      goToTab(index);
-    });
-  };
+((document) => {
+  const el = document.querySelectorAll('.tabs');
+  const tabNavigationLinks = document.querySelectorAll('.tabs__link');
+  const tabContentContainers = document.querySelectorAll('.tabs__tab');
+  let activeIndex = 0;
 
   /**
    * goToTab
    * @description Goes to a specific tab based on index. Returns nothing.
    * @param {Number} index The index of the tab to go to
    */
-  var goToTab = function (index) {
+  const goToTab = (index) => {
     if (index !== activeIndex && index >= 0 && index <= tabNavigationLinks.length) {
       tabNavigationLinks[activeIndex].classList.remove('is-active');
       tabNavigationLinks[index].classList.add('is-active');
@@ -37,18 +22,31 @@
   };
 
   /**
+   * handleClick
+   * @description Handles click event listeners on each of the links in the
+   *   tab navigation. Returns nothing.
+   * @param {HTMLElement} link The link to listen for events on
+   * @param {Number} index The index of that link
+   */
+  const handleClick = (link, index) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      goToTab(index);
+    });
+  };
+
+  /**
    * init
    * @description Initializes the component by removing the no-js class from
    *   the component, and attaching event listeners to each of the nav items.
    *   Returns nothing.
    */
-  for (var e = 0; e < el.length; e++) {
+  for (let e = 0; e < el.length; e += 1) {
     el[e].classList.remove('no-js');
   }
 
-  for (var i = 0; i < tabNavigationLinks.length; i++) {
-    var link = tabNavigationLinks[i];
+  for (let i = 0; i < tabNavigationLinks.length; i += 1) {
+    const link = tabNavigationLinks[i];
     handleClick(link, i);
   }
-
-})();
+})(document);

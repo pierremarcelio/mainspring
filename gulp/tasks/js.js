@@ -17,17 +17,24 @@ var browserSync = global.browserSync;
  * Operations
  ************************************************************/
 gulp.task('js:compile', 'Compile & minify JS sources, with optional source maps', function () {
-  return gulp.src(config.js.src)
+  return gulp.src(config.js.src, { base: paths.themeDir })
   // Concatenate everything within the JavaScript folder.
     .pipe(gulp.$.sourcemaps.init())
+    .pipe(gulp.$.babel(config.js.babel))
     .pipe(gulp.$.concat('scripts.js'))
+    .pipe(gulp.$.browserify({
+      insertGlobals: true,
+      debug: config.js.debug,
+    }))
     .pipe(gulp.$.uglify())
-    .pipe(gulp.$.sourcemaps.write((config.js.sourceMapEmbed) ? null : './'))
+    .pipe(gulp.$.sourcemaps.write((config.js.sourceMapEmbed) ? null : './', {
+      addComment: false,
+    }))
     .pipe(gulp.dest(config.js.dest))
-    .pipe(gulp.$.if(config.js.sizeReport.enabled,
-      gulp.$.sizereport(config.js.sizeReport.options)
-    ))
-    .pipe(browserSync.stream({match: '**/*.js'}));
+    .pipe(gulp.$.if(config.js.sizeReport.enabled, gulp.$.sizereport(config.js.sizeReport.options)))
+    .pipe(browserSync.stream({
+      match: '**/*.js',
+    }));
 });
 
 gulp.task('js:clean', 'Delete compiled JS files', function (done) {
@@ -39,9 +46,9 @@ gulp.task('js:clean', 'Delete compiled JS files', function (done) {
 });
 
 gulp.task('js:hint', 'Perform JS hint checks on sources', function () {
-    return gulp.src(config.js.hint.src)
-      .pipe(gulp.$.jshint())
-      .pipe(gulp.$.jshint.reporter(require('jshint-stylish')));
+  return gulp.src(config.js.hint.src)
+    .pipe(gulp.$.jshint())
+    .pipe(gulp.$.jshint.reporter(require('jshint-stylish')));
 });
 
 gulp.task('js:lint', 'Check JS files for coding standards issues.', function () {
@@ -55,10 +62,10 @@ gulp.task('js:lint', 'Check JS files for coding standards issues.', function () 
  * Builders
  ************************************************************/
 var jsTasks = ['js:compile'];
-if(config.js.hint.enabled) {
+if (config.js.hint.enabled) {
   jsTasks.push('js:hint');
 }
-if(config.js.lint.enabled) {
+if (config.js.lint.enabled) {
   jsTasks.push('js:lint');
 }
 gulp.task('js', 'Execute all configured JS actions (compile, optional hint & lints based on config)', jsTasks);

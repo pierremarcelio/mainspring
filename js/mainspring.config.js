@@ -1,25 +1,28 @@
-/**
- * @file
- * Default javascript configuration for alumni theme.
- *
- * Basically used for just starting up javascript libraries or short pieces of
- * code. If a block of JS code gets longer then 10 or so lines it probably
- * should be moved into its own file.
- */
-;(function($) {
+/* global jQuery, Drupal */
 
-  'use strict';
+import _once from 'lodash/once';
 
-  Drupal.behaviors.emulsifyConfiguration = {
-    attach: function (context, settings) {
-
-      // Configuration that should only be ran once globally.
-      $('body').once('mainspring-configuration-global').each(function () {
-        // Init accordions.
-        // $('.m-accordion-item').accordion();
-      });
-
+(($) => {
+  // Configuration that should only be ran once globally.
+  const init = _once((settings) => {
+    if (settings) {
+      // do stuff
     }
-  };
+    // Init accordions.
+    $('.m-accordion-item').accordion();
+  });
 
+  try {
+    if (Drupal && Drupal.behaviors) {
+      Drupal.behaviors.mainspringConfiguration = {
+        attach(context, settings) {
+          init(settings);
+        },
+      };
+    } else {
+      init();
+    }
+  } catch (e) {
+    init();
+  }
 })(jQuery);

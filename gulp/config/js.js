@@ -6,23 +6,19 @@
 // Globals
 var paths = global.paths;
 global.config.js = {
-  src: [
-    paths.js,
-    paths.js_globals
-  ],
+  src: paths.js,
   dest: paths.dist_folder + '/js/',
   sourceMapEmbed: true,
+  babel: {
+    presets: ['es2015'],
+  },
   hint: {
     enabled: false,
-    src: [
-      paths.js
-    ]
+    src: paths.js,
   },
   lint: {
     enabled: false,
-    src: [
-      paths.js
-    ],
+    src: paths.js,
     options: {
       path: paths.themeDir + '.eslint.js'
     }
