@@ -1,46 +1,13 @@
-{#
-/**
- * @file
- * Default theme implementation to display a pager.
- *
- * Available variables:
- * - items: List of pager items.
- *   The list is keyed by the following elements:
- *   - first: Item for the first page; not present on the first page of results.
- *   - previous: Item for the previous page; not present on the first page
- *     of results.
- *   - next: Item for the next page; not present on the last page of results.
- *   - last: Item for the last page; not present on the last page of results.
- *   - pages: List of pages, keyed by page number.
- *   Sub-sub elements:
- *   items.first, items.previous, items.next, items.last, and each item inside
- *   items.pages contain the following elements:
- *   - href: URL with appropriate query parameters for the item.
- *   - attributes: A keyed list of HTML attributes for the item.
- *   - text: The visible text used for the item link, such as "‹ Previous"
- *     or "Next ›".
- * - current: The page number of the current page.
- * - ellipses: If there are more pages than the quantity allows, then an
- *   ellipsis before or after the listed pages may be present.
- *   - previous: Present if the currently visible list of pages does not start
- *     at the first page.
- *   - next: Present if the visible list of pages ends before the last page.
- *
- * @see template_preprocess_pager()
- *
- * @ingroup themeable
- */
-#}
 {% if items %}
   <div class="m-pager">
-    <h4 class="u-visually--hidden">{{ 'Pagination'|t }}</h4>
+    <h3 class="u-visually--hidden">{{ 'Pagination'|t }}</h3>
 
     <div class="m-pager__group-backwards">
     {% if items.first %}
       <a class="m-pager__btn-first" href="{{ items.first.href }}" title="{{ 'Go to first page'|t }}"{{ items.first.attributes|without('href', 'title') }}>
         <span class="u-visually--hidden" aria-hidden="true">{{ 'First page'|t }}</span>
         <svg class="a-svg">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#angle-double-left">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#angle-double-left">
           </use>
         </svg>
       </a>
@@ -51,7 +18,7 @@
       <a class="m-pager__btn-prev" href="{{ items.previous.href }}" title="{{ 'Go to previous page'|t }}" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>
         <span class="u-visually--hidden" aria-hidden="true">{{ 'Previous page'|t }}</span>
         <svg class="a-svg">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#angle-left">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#angle-left">
           </use>
         </svg>
       </a>
@@ -92,7 +59,7 @@
       <a class="m-pager__btn-next" href="{{ items.next.href }}" title="Next" rel="next">
         <span class="u-visually--hidden" aria-hidden="true">Next page</span>
         <svg class="a-svg">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#angle-right">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#angle-right">
         </use>
       </svg>
       </a>
@@ -102,7 +69,7 @@
       <a class="m-pager__btn-last" href="{{ items.last.href }}" title="{{ 'Go to last page'|t }}"{{ items.last.attributes|without('href', 'title') }}>
         <span class="u-visually--hidden" aria-hidden="true">{{ 'Last page'|t }}</span>
         <svg class="a-svg">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#angle-double-right">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#angle-double-right">
           </use>
         </svg>
       </a>

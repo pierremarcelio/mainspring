@@ -224,6 +224,7 @@ sub {
 
 img {
   border-style: none;
+  max-width: 100%;
   // @if support-for(ie, 7) {
   //   /* Improve image quality when scaled in IE 7. */
   //   -ms-interpolation-mode: bicubic;
@@ -281,6 +282,8 @@ pre,
 samp {
   font-family: monospace, monospace;
   font-size: 1em;
+  background-color: #eee;
+  overflow: auto;
 }
 
 /* Forms

@@ -1,1 +1,3 @@
-<a href="{{ url }}" class="a-btn{{ variation }}">{{ text }}</a>
+<a href="{{ url }}" class="a-btn{{ variation }} {{ extra_classes }}">{{ text }}
+  {% if counter %}&nbsp;<span>{{counter}}</span>{% endif %}
+</a>

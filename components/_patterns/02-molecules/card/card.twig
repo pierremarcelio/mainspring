@@ -1,0 +1,21 @@
+<div class="m-card">
+  <a href="{{ card_url }}" class="m-card__banner" aria-labelby="{{ card_id }}">
+    <span class="u-visually--hidden">banner image</span>
+    {{ card_img }}
+  </a>
+
+  <div class="m-card__info">
+    <div class="m-card__title">
+      {% include "@atoms/00-type/00-heading-2.twig"
+        with {
+          heading: card_title,
+          path: card_url,
+          id: card_id,
+          h2_variation: "a-type__h4",
+        }
+      %}
+    </div>
+    <div class="m-card__body">{{ card_text }}</div>
+  </div>
+</div>
+

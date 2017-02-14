@@ -34,7 +34,6 @@
 
 .m-pager__group-backwards {
   @extend %m-pager__group-core;
-
 }
 
 .m-pager__group-forwards {
@@ -42,31 +41,41 @@
 }
 
 .m-pager__btn-first {
-  // @extend %c-btn--palette-white;
+  @extend %a-btn--core;
+  @extend %a-btn--palette-white;
 
   @include svg-centered(ru(1),  ru(1),  ru(1.5),  ru(2), $x-offset: -3%, $layout-mode: 'margin');
   margin-right: ru(0.25);
-  border: 1px solid $color-secondary-light;
 
   // We need to breakpoits
   @include respond-to('expanded-wrapper') {
     @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: -5%, $layout-mode: 'margin');
   }
+
+  svg {
+    fill: palette(grey, dark);
+  }
 }
 
 
 .m-pager__btn-prev {
-  @extend %a-btn;
+  @extend %a-btn--core;
+  @extend %a-btn--palette-white;
 
   @include svg-centered(ru(1.25),  ru(1.25),  ru(1.5),  ru(2), $x-offset: -2%, $layout-mode: 'margin');
 
   @include respond-to('expanded-wrapper') {
     @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: -3%, $layout-mode: 'margin');
   }
+
+  svg {
+    fill: palette(grey, dark);
+  }
 }
 
 .m-pager__btn-next {
-  @extend %a-btn;
+  @extend %a-btn--core;
+  @extend %a-btn--palette-white;
 
   @include svg-centered(ru(1.25),  ru(1.25),  ru(1.5),  ru(2), $x-offset: 3%, $layout-mode: 'margin');
 
@@ -74,19 +83,27 @@
   @include respond-to('expanded-wrapper') {
     @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: 5%, $layout-mode: 'margin');
   }
+
+  svg {
+    fill: palette(grey, dark);
+  }
 }
 
 // c-btn--icon-large c-btn--secondary
 .m-pager__btn-last {
-  // @extend %c-btn--palette-white;
+  @extend %a-btn--core;
+  @extend %a-btn--palette-white;
 
   @include svg-centered(ru(1),  ru(1),  ru(1.5),  ru(2), $x-offset: 2%, $layout-mode: 'margin');
   margin-left: ru(0.25);
-  border: 1px solid $color-secondary-light;
 
   // We need to breakpoits
   @include respond-to('expanded-wrapper') {
     @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: 5%, $layout-mode: 'margin');
+  }
+
+  svg {
+    fill: palette(grey, dark);
   }
 }
 
@@ -108,47 +125,37 @@
   }
 }
 
-%m-pager__btn-core {
-  display: block;
-  padding: ru(0.125) ru(0.5);
-  font-weight: 700;
-
-  // We need to breakpoits
-  @include respond-to('expanded-wrapper') {
-    padding: ru(0.25) ru(0.5);
-  }
-}
-
 %m-pager__btn,
 .m-pager__item a {
-  // @extend %m-pager__btn-core;
+  $underline-color: $color-secondary;
 
-  text-decoration: underline;
-  color: $color-secondary-light;
+  display: inline;
+  margin-right: ru(0.25);
+  margin-left: ru(0.25);
+  background-color: transparent;
+  background-image: linear-gradient(to right, $underline-color 0%, $underline-color 100%);
+  background-repeat: repeat-x;
+  background-position: bottom center; // Default for old safari
+  background-position: bottom 0.28em center; //sass-lint:disable-line no-duplicate-properties
+  background-size: 100% 1px;
+  color: palette(grey, dark);
+  text-shadow: none;
 
-  &:visited {
-    color: $color-secondary-light;
-  }
-
+  &:focus,
   &:hover,
-  &:focus {
-    background-color: $color-secondary-xlight;
-    color: $color-secondary;
-  }
-
-  &:focus {
-    outline: 2px solid $color-primary;
+  &:active {
+    background-color: transparent;
+    background-size: 100% 2px;
+    color: palette(grey, xdark);
   }
 }
 
 %m-pager__btn--is-active,
 .m-pager__item-is-active a {
-  @extend %m-pager__btn-core;
-
+  display: inline;
   cursor: default;
+  padding: 0 ru(0.25);
   text-decoration: none;
-  color: $black;
+  color: palette(grey, dark);
+  font-weight: 400;
 }
-
-
-// @import 'm-pager--image';

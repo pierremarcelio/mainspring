@@ -6,15 +6,23 @@
 
 %heading-link {
   a {
-    text-decoration: underline;
+    $underline-color: $color-secondary;
+
+    display: inline;
+    background-color: transparent;
+    background-image: linear-gradient(to right, $underline-color 0%, $underline-color 100%);
+    background-repeat: repeat-x;
+    background-position: bottom center; // Default for old safari
+    background-position: bottom 0.12em center; //sass-lint:disable-line no-duplicate-properties
+    background-size: 100% 1px;
     color: $color-primary-dark;
+    text-shadow: none;
 
-    &:focus {
-      background-color: $color-primary-xxlight;
-    }
-
+    &:focus,
     &:hover,
     &:active {
+      background-color: transparent;
+      background-size: 100% 2px;
       color: $color-secondary-dark;
     }
   }
@@ -27,97 +35,37 @@
   @include font-size($h1-font-sizes);
 }
 
-.a-type__h1--h2-appearance,
-%a-type__h1--h2-appearance {
-  @extend %heading-core;
-  @extend %heading-link;
-  @include font-size($h2-font-sizes);
-}
-
-
 .a-type__h2,
 %a-type__h2 {
   @extend %heading-core;
+  @extend %heading-link;
   @include font-size($h2-font-sizes);
 }
 
 .a-type__h3,
 %a-type__h3 {
   @extend %heading-core;
+  @extend %heading-link;
   @include font-size($h3-font-sizes);
 }
 
 .a-type__h4,
 %a-type__h4 {
   @extend %heading-core;
+  @extend %heading-link;
   @include font-size($h4-font-sizes);
 }
 
 .a-type__h5,
 %a-type__h5 {
   @extend %heading-core;
+  @extend %heading-link;
   @include font-size($h5-font-sizes);
 }
 
 .a-type__h6,
 %a-type__h6 {
   @extend %heading-core;
+  @extend %heading-link;
   @include font-size($h6-font-sizes);
 }
-
-
-// Emulsify default stuff, we can delete once type is done
-
-// .heading-1,
-// .heading-2,
-// .heading-3,
-// .heading-4,
-// .heading-5,
-// .heading-6 {
-//   color: $color-primary-xdark;
-//   font-family: $heading;
-//   font-weight: 600;
-//   line-height: 1.8rem;
-//   margin: 0 0 .5em;
-//   width: 100%; // For non header (inline) elements with these styles, e.g. legend
-// }
-
-// .heading-3,
-// .heading-4 {
-//   // @include font-size(.95);
-// }
-
-// .heading-5,
-// .heading-6 {
-//   color: $color-primary;
-//   // @include font-size(.85);
-//   text-transform: uppercase;
-// }
-
-// // TODO: BEM selectors should be applied to wysiwyg-created content
-
-// .text-long {
-//   h1 {
-//     @extend .heading-1;
-//   }
-
-//   h2 {
-//     @extend .heading-2;
-//   }
-
-//   h3 {
-//     @extend .heading-3;
-//   }
-
-//   h4 {
-//     @extend .heading-4;
-//   }
-
-//   h5 {
-//     @extend .heading-5;
-//   }
-
-//   h6 {
-//     @extend .heading-6;
-//   }
-// }

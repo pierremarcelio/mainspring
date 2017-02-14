@@ -32,11 +32,11 @@
       {% if messages|length > 1 %}
         <ul>
           {% for message in messages %}
-            <li class="status--{{ type }}">{{ message }}</li>
+            <li class="m-status--{{ type }}">{{ message }}</li>
           {% endfor %}
         </ul>
       {% else %}
-        <span class="status--{{ type }}">{{ messages|first }}</span>
+        <span class="m-status--{{ type }}">{{ messages|first }}</span>
       {% endif %}
     {% if type == 'error' %}
       </div>
