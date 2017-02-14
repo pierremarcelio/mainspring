@@ -1,0 +1,10 @@
+rows:
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+
