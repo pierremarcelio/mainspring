@@ -6,7 +6,18 @@
 
   {# Override default main_header block #}
   {% block main_utilities %}
-    {{ tabs }}
+    {% if messages %}
+      <div class="l-main__utilities-messages">
+        {{ messages }}
+      </div>
+    {% endif %}
+
+    {% if tabs %}
+      <div class="l-main__utilities-tabs">
+        {{ tabs }}
+      </div>
+    {% endif %}
+
     {{ main_nav }}
   {% endblock %}
 

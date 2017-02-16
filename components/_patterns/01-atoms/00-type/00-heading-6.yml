@@ -1,2 +1,4 @@
 heading:
   "This is a Header 6 styling"
+h6_variation:
+  "a-type__h6"

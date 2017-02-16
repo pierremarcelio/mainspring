@@ -1,7 +1,4 @@
 ---
-el: ".grid"
-title: "Grid"
+el: ".l-grid"
+title: "Grid Single Column Layout (Default)"
 ---
-## Grid Layout
-
-Grid by default just uses flexbox with the last item(s) stretched to fill. See the syntax below changing the amount of items per grid (e.g., `class="grid--2"`). Background color, height and margin added for display in Pattern Lab only.

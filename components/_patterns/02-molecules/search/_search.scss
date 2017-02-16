@@ -1,0 +1,68 @@
+.m-search {
+  position: relative;
+  margin-bottom: ru(0.75);
+  width: 100%;
+
+  @include respond-to ('expanded-wrapper') {
+    width: 75%;
+  }
+
+  @include respond-to ('type-large') {
+    width: 50%;
+  }
+
+  @include respond-to ('full-nav') {
+    width: 100%;
+  }
+}
+
+.m-search__textbox {
+  label {
+    @extend %u-visually--hidden;
+  }
+
+  input {
+    border: 1px solid palette(grey, light);
+    padding-top: ru(0.25);
+    padding-right: ru(1.5);
+    padding-bottom: ru(0.25);
+    padding-left: ru(0.2);
+    width: 100%;
+  }
+}
+
+.m-search__btn {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  margin: 0;
+  width: ru(1.5);
+  height: ru(1.5);
+  color: palette(grey);
+
+  input {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    width: ru(1.25);
+    height: ru(1.25);
+    text-indent: -99999px;
+  }
+
+  svg {
+    @extend %svg--fill;
+    position: absolute;
+    top: 5px;
+    left: 3px;
+    cursor: pointer;
+    width: ru(1);
+    height: ru(1);
+    color: palette(grey, dark);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: palette(grey);
+    }
+  }
+}

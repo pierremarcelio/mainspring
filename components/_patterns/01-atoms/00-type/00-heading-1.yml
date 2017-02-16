@@ -1,2 +1,4 @@
 heading:
   "This is a Header 1 styling"
+h1_variation:
+  "a-type__h1"

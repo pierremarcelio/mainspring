@@ -1,5 +1,5 @@
-<h2 class="a-type__h2{{ h2_variation }}">
-{% if path %} <a href="{{ path }}"> {% endif %}
+<h2{% if h2_variation %} class="{{ h2_variation }}"{% endif %}>
+{% if path %} <a href="{{ path }}"{% if id %} id="{{ id }}"{% endif %}> {% endif %}
   {{ heading }}
 {% if path %} </a> {% endif %}
 </h2>

@@ -1,1 +1,22 @@
 primary:
+  join():
+      - include():
+          pattern: atoms-tab
+          with:
+            tab_link: "#"
+            tab_text: "Tab 1"
+      - include():
+          pattern: atoms-tab
+          with:
+            tab_link: "#"
+            tab_text: "Tab 2"
+      - include():
+          pattern: atoms-tab
+          with:
+            tab_link: "#"
+            tab_text: "Tab 3"
+      - include():
+          pattern: atoms-tab
+          with:
+            tab_link: "#"
+            tab_text: "Tab 4"

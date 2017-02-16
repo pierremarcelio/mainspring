@@ -1,2 +1,4 @@
 heading:
   "This is a Header 5 styling"
+h5_variation:
+  "a-type__h5"

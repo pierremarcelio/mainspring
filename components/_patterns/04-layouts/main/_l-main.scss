@@ -2,8 +2,7 @@
 .l-main {
   position: relative;
   margin: 0 auto;
-  background-color: palette(blue, xlight);
-  padding: ru(1);
+  background-color: palette(grey, xlight);
   max-width: $bp-max;
   overflow: hidden;
 }
@@ -14,14 +13,14 @@
   background-color: $white;
 }
 
-// .l-main__header {
-//   background-color: palette(grey, light);
-//   padding: ru(1);
-// }
 
 .l-main__utilities  {
   background-color: palette(grey, xxlight);
   padding: ru(1);
+
+  @include respond-to('full-nav') {
+    width: 75%;
+  }
 }
 
 .l-main__content {

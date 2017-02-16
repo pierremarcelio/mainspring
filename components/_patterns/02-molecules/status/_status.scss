@@ -7,12 +7,11 @@ $statuses: (
 ) !default;
 
 @each $status-type, $color in $statuses {
-  .status--#{$status-type} {
+  .m-status--#{$status-type} {
     display: block;
     margin-bottom: $base-spacing / 2;
     background-color: $color;
     padding: $base-spacing / 2;
-    text-align: center;
     color: shade($color, 60%);
 
     a {
@@ -31,3 +30,4 @@ $statuses: (
     }
   }
 }
+

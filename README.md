@@ -11,12 +11,12 @@ Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) 
 
 ## Quickstart
 
-From the theme folder, run: 
+From the theme folder, run:
 
 ```bash
 npm run init
 ```
-  
+
 This command will:
 
 1. Install Gulp & Yarn globally in case you don't have them
@@ -41,7 +41,7 @@ This is the most desired and best way to work with this theme. The following com
 
 The key benefits of the tasks bundled into this process:
 
-* Pattern Lab is served on a localhost using BrowserSync for you to work with building and revise your components easily  
+* Pattern Lab is served on a localhost using BrowserSync for you to work with building and revise your components easily
 * Images and svg on init are processed and optimized. In the case of SVGs, they are bundled in to sprite packages for optimal use on site
 * Updating sass or js code will live stream the updates to the browser, meaning you won't have or see a reload take place
 * Sass docs runs along the watcher providing real time documentation generation on your styling details
@@ -54,9 +54,9 @@ A do everything for you command isn't good enough. Fear not, you have a lot of t
 
 ## Gulp Config & Tasks
 
-### Folders 
+### Folders
 
-`gulp/config` Contains configuration specific to groups of tasks, broken apart for you to easily digest their purpose and defaults. 
+`gulp/config` Contains configuration specific to groups of tasks, broken apart for you to easily digest their purpose and defaults.
 
 `gulp/lib` A some collection of supporting functions leveraged in tasks.
 
@@ -80,13 +80,13 @@ module.exports = {
 };
 ```
 
-Want to have BrowserSync automatically open up a new tab in your browser when it initalizes? No problem!
+Want to have BrowserSync not automatically open up a new tab in your browser when it initalizes? No problem!
 
 ```js
 module.exports = {
   browserSync: {
       defaults: {
-          open: true // Opens a new tab, yay!
+          open: false // Pew pew tab, yay!
       },
   },
 };

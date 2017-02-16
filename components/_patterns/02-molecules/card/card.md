@@ -1,5 +1,5 @@
 ---
-el: ".card"
+el: ".m-card"
 title: "Card default variation"
 ---
 ## Card

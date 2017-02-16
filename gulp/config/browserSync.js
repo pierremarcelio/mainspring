@@ -13,7 +13,7 @@ global.config.browserSync = {
   baseDir: './',
   defaults: {
     startPath: 'pattern-lab/public/',
-    open: false,
+    open: true,
     browser: "google chrome",
     reloadDelay: 50,
     reloadDebounce: 750

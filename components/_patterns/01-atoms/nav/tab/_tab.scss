@@ -1,43 +1,4 @@
-.tabs__link {
-  display: block;
-  border: 1px solid palette(grey, xxxlight);
-  border-bottom: 0;
-  background-color: palette(grey, xxlight);
-  padding: 1em 2.4em;
-  text-align: center;
-  text-decoration: none;
-  color: $grey;
-  font-size: 1.1rem;
-  font-weight: 600;
-  transition: color 0.3s;
-
-  // @include medium {
-  //   border-bottom: 1px solid palette(grey, xxxlight);
-  //   border-left: none;
-  //   display: inline-block;
-  //   font-size: 1rem;
-  //   padding: .6em 1.7em;
-  //   position: relative;
-  //   top: 1px;
-  //   width: auto;
-  // }
-
-  &:hover {
-    background-color: palette(grey, xxxlight);
-    color: palette(grey, dark);
-  }
-
-  &.is-active {
-    border: 1px solid $grey;
-    background-color: $grey;
-    color: $white;
-
-    // @include medium {
-    //   background-color: $white;
-    //   border: 1px solid palette(grey, xxxlight);
-    //   border-bottom: 1px solid $grey;
-    //   border-left: none;
-    //   color: $grey;
-    // }
-  }
+.m-tab__item {
+  display: inline-block;
+  margin: 0;
 }

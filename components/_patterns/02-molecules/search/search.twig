@@ -1,0 +1,18 @@
+{% if search_form %}
+  <div{{ attributes }}>
+    {% block content %}
+      {{ search_form }}
+    {% endblock %}
+  </div>
+{% else %}
+  <div class="m-search">
+    <div class="m-search__textbox">
+      <label>Title</label>
+      <input type="text" name="title" value="" size="30" maxlength="128">
+    </div>
+    <div class="m-search__btn">
+      <input type="submit" value="Apply">
+      <svg class="m-search__svg"><use xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#search"></use></svg>
+    </div>
+  </div>
+{% endif %}

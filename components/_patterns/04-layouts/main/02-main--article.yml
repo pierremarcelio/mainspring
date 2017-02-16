@@ -10,7 +10,16 @@ main_content:
 main_aside:
   content: "Main Article Aside"
   demo_class: "demo--dbl4"
-article_title : This title of an article post. It is really long to see it wrapping
+#main--article vars
+banner_img_type : image
+banner_img : <img src='https://placeholdit.imgix.net/~text?txtsize=44&txt=1220%C3%97400&w=1220&h=400'/>
+blog_tag_title : Primary Tag
+blog_tag_url: '#'
+publish_date : Jan 1, 2017
+blog_title : This would be the article of blog post. It is really long to see it wrapping
+author : Blog Author
+originally_published_url : "#"
+originally_published_title : Website.com
 body : <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
     irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
