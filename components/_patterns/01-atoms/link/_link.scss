@@ -1,9 +1,9 @@
 %a-link--core {
   @extend %u-animate-all;
-  display: inline-block;
+  display: inline;
   background-repeat: repeat-x;
   background-position: bottom center; // Default for old safari
-  background-position: bottom 0.25em center; //sass-lint:disable-line no-duplicate-properties
+  background-position: bottom 0.04em center; //sass-lint:disable-line no-duplicate-properties
   background-size: 100% 1px;
   cursor: pointer;
 }
@@ -14,14 +14,11 @@
   @include accessible-link();
   color: $color-secondary;
 
-  &:visited {
-    color: $color-secondary;
-  }
-
+  &:visited,
   &:hover,
   &:focus,
   &:active {
-    color: $color-secondary-dark;
+    color: $color-secondary;
   }
 }
 
@@ -30,10 +27,7 @@
   @include accessible-link();
   color: $color-primary-dark;
 
-  &:visited {
-    color: $color-primary-dark;
-  }
-
+  &:visited,
   &:hover,
   &:focus,
   &:active {

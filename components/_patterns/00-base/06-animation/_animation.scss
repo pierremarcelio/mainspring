@@ -36,4 +36,5 @@ $transition-duration: 0.25s !default;
 %u-animate-all {
   transition-property: all;
   transition-duration: $transition-duration;
+  transition-timing-function: ease-in;
 }
