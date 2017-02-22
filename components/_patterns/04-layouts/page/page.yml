@@ -1,0 +1,10 @@
+header_logo:
+  join():
+     - include():
+        pattern: molecules-logo
+header_menu_main:
+  join():
+     - include():
+        pattern: molecules-menu-main
+content: "<div class='demo--dbl2'><br/>Page Content Goes Here<br/></div>"
+footer_year: "2017"

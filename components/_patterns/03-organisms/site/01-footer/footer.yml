@@ -1,4 +1,5 @@
-logo:
+footer_logo:
   join():
-  - molecules-logo
+    - include():
+       pattern: molecules-logo
 year: '2017'
