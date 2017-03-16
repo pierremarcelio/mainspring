@@ -2,16 +2,20 @@
 {% if heading.label %}
   {# Dynamically determine the title h level, or fallback to h2 by default. #}
   {% set level = 'h' ~ (heading.level?:2) %}
-  {# {% if heading.variation %} #}
-    {% set variation = '__h' ~ (heading.variation?:(heading.level?:2)) %}
-  {# {% endif %} #}
+  {% set variation = '__h' ~ (heading.variation?:(heading.level?:2)) %}
+
+  {# heading id used for aria roles or anchor links. not rendered by default and  #}
+
   <{{ level }}
     class="a-heading{{variation}}"
     data-align="{{ heading.align?:'left' }}"
     data-theme="{{ heading.theme?:'normal' }}"
+    {% if heading.id and not heading.url %}
+    id="{{ heading.id }}"
+    {% endif %}
   >
     {% if heading.url %}
-      <a href="{{ heading.url }}" {% if heading.id %}id="{{ heading.id }}"{% endif %}>{{ heading.label }}</a>
+      <a href="{{ heading.url }}" {% if heading.id and heading.url %}id="{{ heading.id }}"{% endif %}>{{ heading.label }}</a>
     {% else %}
       {{ heading.label }}
     {% endif %}

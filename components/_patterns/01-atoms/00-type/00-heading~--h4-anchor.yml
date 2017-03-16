@@ -1,0 +1,5 @@
+heading:
+  label: "Heading - level 4 as an anchor link"
+  level: 4
+  id: "anchor_id"
+
