@@ -1,0 +1,5 @@
+heading:
+  label: "Heading - By default heading are level 2, left aligned and centered"
+  level: 2 #default: 2
+  align: "left" #default: left
+  theme: "normal" #default: normal

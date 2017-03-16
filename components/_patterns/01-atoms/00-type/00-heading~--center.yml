@@ -1,0 +1,6 @@
+heading:
+  label: "Heading - Level 1, Centered, Italic"
+  level: 1 #default: 2
+  align: "center" #default: left
+  theme: "italics" #default: normal
+  # no variation by dafault

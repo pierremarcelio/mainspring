@@ -6,16 +6,18 @@
 
   <div class="m-card__info">
     <div class="m-card__title">
-      {% include "@atoms/00-type/00-heading-2.twig"
+      {% include "@atoms/00-type/00-heading.twig"
         with {
-          heading: card_title,
-          path: card_url,
-          id: card_id,
-          h2_variation: "a-type__h4",
+          heading: {
+            label: card_title,
+            url: card_url,
+            level: 2,
+            variation: 4,
+            id: card_id,
+          }
         }
       %}
     </div>
     <div class="m-card__body">{{ card_text }}</div>
   </div>
 </div>
-

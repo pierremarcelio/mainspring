@@ -25,9 +25,12 @@
   {% block main_content %}
     <div class="l-main__article-content">
       <div class="l-main__article-title">
-      {% include "@atoms/00-type/00-heading-1.twig"
+      {% include "@atoms/00-type/00-heading.twig"
         with {
-          heading: article_title,
+          heading: {
+            label: blog_title,
+            level: 1,
+          }
         }
       %}
       </div>

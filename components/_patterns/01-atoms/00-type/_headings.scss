@@ -1,9 +1,3 @@
-%heading-core {
-  color: $color-primary-dark;
-  font-family: $title-font-family;
-  font-weight: $title-font-weight;
-}
-
 %heading-link {
   a {
     $underline-color: $color-secondary;
@@ -28,44 +22,58 @@
   }
 }
 
-.a-type__h1,
-%a-type__h1 {
-  @extend %heading-core;
+%heading-core {
   @extend %heading-link;
+
+  color: $color-primary-dark;
+  font-family: $title-font-family;
+  font-weight: $title-font-weight;
+
+  &[data-align='left'] {
+    text-align: left;
+  }
+
+  &[data-align='center'] {
+    text-align: center;
+  }
+
+  &[data-theme='italics'] {
+    font-style: italic;
+  }
+}
+
+.a-heading__h1,
+%a-heading__h1 {
+  @extend %heading-core;
   @include font-size($h1-font-sizes);
 }
 
-.a-type__h2,
-%a-type__h2 {
+.a-heading__h2,
+%a-heading__h2 {
   @extend %heading-core;
-  @extend %heading-link;
   @include font-size($h2-font-sizes);
 }
 
-.a-type__h3,
-%a-type__h3 {
+.a-heading__h3,
+%a-heading__h3 {
   @extend %heading-core;
-  @extend %heading-link;
   @include font-size($h3-font-sizes);
 }
 
-.a-type__h4,
-%a-type__h4 {
+.a-heading__h4,
+%a-heading__h4 {
   @extend %heading-core;
-  @extend %heading-link;
   @include font-size($h4-font-sizes);
 }
 
-.a-type__h5,
-%a-type__h5 {
+.a-heading__h5,
+%a-heading__h5 {
   @extend %heading-core;
-  @extend %heading-link;
   @include font-size($h5-font-sizes);
 }
 
-.a-type__h6,
-%a-type__h6 {
+.a-heading__h6,
+%a-heading__h6 {
   @extend %heading-core;
-  @extend %heading-link;
   @include font-size($h6-font-sizes);
 }

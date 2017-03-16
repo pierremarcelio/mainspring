@@ -1,0 +1,19 @@
+{# If no actual heading label was passed along, this component should not render. #}
+{% if heading.label %}
+  {# Dynamically determine the title h level, or fallback to h2 by default. #}
+  {% set level = 'h' ~ (heading.level?:2) %}
+  {# {% if heading.variation %} #}
+    {% set variation = '__h' ~ (heading.variation?:(heading.level?:2)) %}
+  {# {% endif %} #}
+  <{{ level }}
+    class="a-heading{{variation}}"
+    data-align="{{ heading.align?:'left' }}"
+    data-theme="{{ heading.theme?:'normal' }}"
+  >
+    {% if heading.url %}
+      <a href="{{ heading.url }}" {% if heading.id %}id="{{ heading.id }}"{% endif %}>{{ heading.label }}</a>
+    {% else %}
+      {{ heading.label }}
+    {% endif %}
+  </{{ level }}>
+{% endif %}
