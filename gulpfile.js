@@ -6,8 +6,8 @@
 // Modules
 var requireDir = require('require-dir');
 var _ = {
-  isObject: require('lodash/isObject'),
-  defaultsDeep: require('lodash/defaultsDeep')
+  defaultsDeep: require('lodash/defaultsDeep'),
+  isObject: require('lodash/isObject')
 };
 // Globals
 global.config = {};
@@ -22,7 +22,7 @@ try {
   var localConfig = require('./local.gulp-config');
 
   if (_.isObject(localConfig)) {
-    global.config = _.defaultsDeep(localConfig, global.config);
+    global.config = _.defaultsDeep(global.config, localConfig);
   }
 } catch (e) {
 }
