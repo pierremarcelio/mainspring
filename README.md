@@ -2,6 +2,13 @@
 
 Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) automated via Gulp. Also serves as a starterkit Drupal 8 theme.
 
+NOTE: This is the Drupal 8 version of Mainspring that runs with pattern lab as it's style guide generator. The [Legacy Mainspring](https://github.com/fosterinteractive/mainspring-legacy) Project  using SC5 has been moved to it's own project.
+
+##Credit where it's Due##
+This project is mash-up of [Legacy Mainspring](https://github.com/fosterinteractive/mainspring-legacy) and a fork of Four Kitchen's [Emulsify](https://github.com/fourkitchens/emulsify) Project.
+
+A major contribution by [Sean Homer](https://github.com/homertherefore) who refactored the Emulsify tasks written in NodeJS to Gulp, and blended the Legacy Mainspring and Emulsify Gulp tasks.
+
 ## Requirements
 
   1. [Node (we recommend NVM)](https://github.com/creationix/nvm)
