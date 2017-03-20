@@ -16,7 +16,7 @@ banner_img : <img src='https://placeholdit.imgix.net/~text?txtsize=44&txt=1220%C
 blog_tag_title : Primary Tag
 blog_tag_url: '#'
 publish_date : Jan 1, 2017
-blog_title : This would be the article of blog post. It is really long to see it wrapping
+article_title : This would be the title of an article post. It is really long to see it wrapping
 author : Blog Author
 originally_published_url : "#"
 originally_published_title : Website.com

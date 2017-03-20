@@ -14,5 +14,14 @@
  * @see template_preprocess_menu_local_task()
  */
 #}
+{% if is_active %}
+  {% set class =  "is-active" %}
+{% endif %}
 
-{% include "@atoms/nav/tab/tab.twig" %}
+{% include "@atoms/nav/tab/tab.twig"
+  with {
+    tab_link: link['#url'].getInternalPath(),
+    tab_text: link['#title'],
+    tab_classes: class,
+  }
+%}

@@ -13,16 +13,6 @@
   background-color: $white;
 }
 
-
-.l-main__utilities  {
-  background-color: palette(grey, xxlight);
-  padding: ru(1);
-
-  @include respond-to('full-nav') {
-    width: 75%;
-  }
-}
-
 .l-main__content {
   background-color: palette(grey, light);
   padding: ru(1);

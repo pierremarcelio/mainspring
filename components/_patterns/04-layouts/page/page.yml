@@ -6,5 +6,7 @@ header_menu_main:
   join():
      - include():
         pattern: molecules-menu-main
-content: "<div class='demo--dbl2'><br/>Page Content Goes Here<br/></div>"
+messages: "<div class='m-status--status'>Messages area - Post has been updated.</div>"
+tabs: "<div>Tabs area</div>"
+content: "<div class='l-main demo--dbl2'><br/>Page Content Goes Here<br/></div>"
 footer_year: "2017"

@@ -8,12 +8,28 @@
     %}
   </div>
 
-  {{ content }}
+  <div class="l-page__utilities">
+    {% if messages %}
+      <div class="l-page__utilities-messages">
+        {{ messages }}
+      </div>
+    {% endif %}
+
+    {% if tabs %}
+      <div class="l-page__utilities-tabs">
+        {{ tabs }}
+      </div>
+    {% endif %}
+  </div>
+
+  {% block page_content %}
+    {{ content }}
+  {% endblock %}
 
   <div class="l-page__footer">
     {% include "@organisms/site/01-footer/footer.twig"
       with {
-        year: footer_year
+        year: footer_year,
       }
     %}
   </div>

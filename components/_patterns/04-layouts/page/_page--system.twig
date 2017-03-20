@@ -1,0 +1,11 @@
+{% extends '@layouts/page/page.twig' %}
+
+{% block page_content %}
+  {% include "@layouts/main/_main--system.twig"
+    with {
+      content: content,
+      page_title: title,
+      searchbar: searchbar,
+    }
+  %}
+{% endblock %}
