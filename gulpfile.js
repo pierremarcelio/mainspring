@@ -7,7 +7,7 @@
 var requireDir = require('require-dir');
 var _ = {
   defaultsDeep: require('lodash/defaultsDeep'),
-  isObject: require('lodash/isObject')
+  isObject: require('lodash/isObject'),
 };
 // Globals
 global.config = {};
