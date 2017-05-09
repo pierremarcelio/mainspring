@@ -4,23 +4,26 @@
  * Variables
  ************************************************************/
 // Local
-var localUrl = 'mainspring.dev'; // EG 'localhost', 'mysite.dev'
+var localUrl = ''; // EG 'localhost', 'mysite.dev', leave blank for
 // Globals
 var paths = global.paths;
+
+
 global.config.browserSync = {
   ui: true,
   enabled: true,
   baseDir: './',
+  domain: localUrl,
   defaults: {
     startPath: 'pattern-lab/public/',
     open: true,
     browser: "google chrome",
     reloadDelay: 50,
-    reloadDebounce: 750
-    // Uncomment below if using a specific local url
-    // ,proxy: localUrl
-  }
+    reloadDebounce: 750,
+  },
 };
+
+
 global.config.wpt = {
   // WebPageTest API key https://www.webpagetest.org/getkey.php
   // key:

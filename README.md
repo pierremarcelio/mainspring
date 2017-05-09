@@ -1,6 +1,6 @@
 # Mainspring: Pattern Lab + Drupal 8
 
-Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) automated via Gulp. Also serves as a starterkit Drupal 8 theme.
+Component-driven prototyping tool using [Pattern Lab v2](http://patternlab.io/) automated via Gulp. Also serves as a starterkit Drupal 8 theme or any other Twig-PHP compatible CMS.
 
 NOTE: This is the Drupal 8 version of Mainspring that runs with pattern lab as it's style guide generator. The [Legacy Mainspring](https://github.com/fosterinteractive/mainspring-legacy) Project  using SC5 has been moved to it's own project.
 
@@ -30,14 +30,25 @@ This command will:
 1. Install Gulp & Yarn globally in case you don't have them
 2. Install the needed theme dependencies. *Note* dev related dependencies are installed which manage and run the theme's build tasks.
 3. Creates a local.gulp-config.js (already gitignored) should you need or want to override the defaults things.
-4. Runs a build of the theme assets so if you don't enter Pattern Lab right away, sites assets will still be ready to go in drupal!
+4. Runs a full build of the theme assets for all file types & tasks.
 
 You can run these manually, or simply use `npm i` if you prefer and have Gulp already, but yarn will install your deps in half the time npm does...
 
-#### (Drupal-specific installation)
+* You should now probably commit the yarn.lock file to you repo to ensure co-workers get the exact same versions of the node modules / gulp tasks in when they ```npm run init```
 
-  1. Download and enable [Components](https://www.drupal.org/project/components) module
-  2. Enable Emulsify theme
+### Drupal-specific Instructions
+
+This project isn't a fully fledged Drupal theme, it's just intended as starter boilerplate for you to edit. Don't bother cloning from Git as you'll never want to pull upstream changes. Hack away!
+
+* Download a ZIP of this project and place it in /themes/your-theme/ 
+* Assuming you're working in a local development enviroment you'll want to run browserSync in Proxy Mode (See below)
+
+#### Recommended Modules
+
+1. Download and enable [Components](https://www.drupal.org/project/components) module
+2. Download and enable [Twig Tweaks](https://www.drupal.org/project/twig_tweak) module
+3. Download and enable [Twig Field Value](https://www.drupal.org/project/twig_field_value) module
+
 
 ## Starting Pattern Lab and watch task
 
@@ -55,6 +66,8 @@ The key benefits of the tasks bundled into this process:
 * Sass docs runs along the watcher providing real time documentation generation on your styling details
 * Updating twig and yml files and such will automatically reload the page you were viewing, needed to recompile assets for Pattern Lab
 * Depending on your config, you can see lint/hint options on updates your working with to help ensure yours standing on the path all of your team is following with standards
+
+
 
 # But wait, there's more!
 
@@ -135,3 +148,46 @@ There are plethora of gulp tasks readily available to you. Most run as part of t
 `svg` This will perform all of the SVG related tasks to minify and sprite the SVG icons in the theme to be leveraged in components. They can be targeted in a number of ways, with the sprite files, or individual SVG if required. The sprite files automatically have PNG fall backs for dated browsers which is why they are the desired way to leverage them on site.
 
 Because this is only run on load and not as a watcher by default (though can be enabled though config), often you just need to run it manually should you need it easily.
+
+## BrowserSync Config
+
+[BrowserSync](https://www.browsersync.io/) allows you to view your pattern lab changes instantly in the browser whenever you update a twig or scss file in your patterns. Mainspring is setup to run Browsersync in 2 modes HTTP server or Proxy mode.
+
+### HTML Server 
+
+The default mainspring configuration uses broswerSync's HTTP server. As pattern lab generates flat HTML files this runs fast and works great. No special configuration is required. 
+
+If you're running Drupal (or another CMS) then you'll probably want browserSync to work for *both* Pattern Lab and your actual website. For this you'll need the proxy server mode.
+
+### Proxy Server
+
+Proxy Server mode requires you run a local development environment. This example assumes my Drupal Theme is installed in /themes/mainspring. To enable this just update your  local.gulp-config.js with the following local overrides. 
+
+* ```domain``` Is the local development URL (EG http://mainspring.dev , http://localhost, etc.)
+* ```startPath``` is the default browser location to open every time I run ```gulp``` (Eg. themes/mainspring/pattern-lab/public is where pattern lab is exported)
+
+```
+module.exports = {
+  browserSync: {
+    domain: 'mainspring.dev',
+    defaults: {
+      startPath: 'themes/mainspring/pattern-lab/public'
+    }
+  }
+};
+```
+
+Now as the browserSync is running from your Drupal root (not the theme folder) you'll need to edit the file ```/themes/mainspring/components/data/data.json``` 
+
+From
+```
+  "directory": "",
+```
+To
+```
+  "directory": "/themes/mainspring/",
+```
+
+
+
+That's it. Now browserSync works for both Drupal and for Pattern Lab!

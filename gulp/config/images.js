@@ -7,9 +7,9 @@
 var paths = global.paths;
 global.config.images = {
   src: paths.img + '/**/*',
-    dest: paths.dist_img,
-    sizeReport: {
-    enabled: false,
-      options: {}
+  dest: paths.dist_img,
+  sizeReport: {
+  enabled: false,
+    options: {}
   }
 };
