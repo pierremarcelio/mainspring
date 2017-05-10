@@ -22,8 +22,9 @@ try {
   var localConfig = require('./local.gulp-config');
 
   if (_.isObject(localConfig)) {
-    global.config = _.defaultsDeep(global.config, localConfig);
+    global.config = _.defaultsDeep(localConfig, global.config);
   }
+
 } catch (e) {
 }
 

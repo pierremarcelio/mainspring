@@ -1,14 +1,16 @@
 'use strict';
-
+var path = require("path");
 /*************************************************************
  * Variables
  ************************************************************/
 // Local
-var themeDir = process.cwd() + '/';
+var themeDir = process.cwd() + '/'; // Theme folder (where gulp is running)
 var distFolder = 'assets';  // Output folder in theme
+
 // Global
 global.paths = {
   relative: './',
+  themeDir: themeDir,
   themeDir: themeDir,
   js: [
     themeDir + '/components/_patterns/00-base/global/*.js',

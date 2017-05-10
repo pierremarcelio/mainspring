@@ -18,9 +18,15 @@ var browserSync = global.browserSync;
 gulp.task('serve', 'Launch BrowserSync and expected file watchers to serve PatternLab',
   ['compile', 'watch'],
   function () {
+
     if (config.browserSync.domain) {
+
       browserSync.init(_.defaults({
-        injectChanges: true
+        injectChanges: true,
+        // Add Proxy server URL
+        proxy: {
+          target: config.browserSync.domain
+        }
       }, config.browserSync.defaults));
     }
     else {
@@ -33,6 +39,8 @@ gulp.task('serve', 'Launch BrowserSync and expected file watchers to serve Patte
     }
   }
 );
+
+
 
 /*************************************************************
  * Builders
