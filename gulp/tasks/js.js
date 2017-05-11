@@ -19,14 +19,15 @@ var browserSync = global.browserSync;
 gulp.task('js:compile', 'Compile & minify JS sources, with optional source maps', function () {
   return gulp.src(config.js.src, { base: paths.themeDir })
   // Concatenate everything within the JavaScript folder.
+
     .pipe(gulp.$.sourcemaps.init())
-    .pipe(gulp.$.babel(config.js.babel))
+    // .pipe(gulp.$.babel(config.js.babel))
     .pipe(gulp.$.concat('scripts.js'))
-    .pipe(gulp.$.browserify({
-      insertGlobals: true,
-      debug: config.js.debug,
-    }))
-    .pipe(gulp.$.uglify())
+    // .pipe(gulp.$.browserify({
+    //   insertGlobals: true,
+    //   debug: config.js.debug,
+    // }))
+    // .pipe(gulp.$.uglify())
     .pipe(gulp.$.sourcemaps.write((config.js.sourceMapEmbed) ? null : './', {
       addComment: false,
     }))

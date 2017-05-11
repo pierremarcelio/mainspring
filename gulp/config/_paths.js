@@ -11,11 +11,9 @@ var distFolder = 'assets';  // Output folder in theme
 global.paths = {
   relative: './',
   themeDir: themeDir,
-  themeDir: themeDir,
   js: [
-    themeDir + '/components/_patterns/00-base/global/*.js',
     themeDir + '/components/_patterns/**/*.js',
-    themeDir + '/js/**/*.js',
+    // themeDir + '/js/**/*.js',
   ],
   sass: themeDir,
   img: themeDir + '/images',
