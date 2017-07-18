@@ -40,7 +40,7 @@ You can run these manually, or simply use `npm i` if you prefer and have Gulp al
 
 This project isn't a fully fledged Drupal theme, it's just intended as starter boilerplate for you to edit. Don't bother cloning from Git as you'll never want to pull upstream changes. Hack away!
 
-* Download a ZIP of this project and place it in /themes/your-theme/ 
+* Download a ZIP of this project and place it in /themes/your-theme/
 * Assuming you're working in a local development enviroment you'll want to run browserSync in Proxy Mode (See below)
 
 #### Recommended Modules
@@ -101,17 +101,18 @@ module.exports = {
 };
 ```
 
-Want to have BrowserSync not automatically open up a new tab in your browser when it initalizes? No problem!
+Want to have BrowserSync run in proxy mode so it works in both pattern lab and your local dev website? Also let's not automatically open up a new tab in your browser when it initalizes.
 
 ```js
 module.exports = {
   browserSync: {
-      defaults: {
-          open: false // Pew pew tab, yay!
-      },
-  },
+    domain: 'mainspring.dev',
+    defaults: {
+      startPath: 'themes/mainspring/pattern-lab/public'
+      open: false,
+    }
+  }
 };
-```
 
 The sky's your limit, until you break something. :p
 
@@ -153,15 +154,15 @@ Because this is only run on load and not as a watcher by default (though can be 
 
 [BrowserSync](https://www.browsersync.io/) allows you to view your pattern lab changes instantly in the browser whenever you update a twig or scss file in your patterns. Mainspring is setup to run Browsersync in 2 modes HTTP server or Proxy mode.
 
-### HTML Server 
+### HTML Server
 
-The default mainspring configuration uses broswerSync's HTTP server. As pattern lab generates flat HTML files this runs fast and works great. No special configuration is required. 
+The default mainspring configuration uses broswerSync's HTTP server. As pattern lab generates flat HTML files this runs fast and works great. No special configuration is required.
 
 If you're running Drupal (or another CMS) then you'll probably want browserSync to work for *both* Pattern Lab and your actual website. For this you'll need the proxy server mode.
 
 ### Proxy Server
 
-Proxy Server mode requires you run a local development environment. This example assumes my Drupal Theme is installed in /themes/mainspring. To enable this just update your  local.gulp-config.js with the following local overrides. 
+Proxy Server mode requires you run a local development environment. This example assumes my Drupal Theme is installed in /themes/mainspring. To enable this just update your  local.gulp-config.js with the following local overrides.
 
 * ```domain``` Is the local development URL (EG http://mainspring.dev , http://localhost, etc.)
 * ```startPath``` is the default browser location to open every time I run ```gulp``` (Eg. themes/mainspring/pattern-lab/public is where pattern lab is exported)
@@ -177,7 +178,7 @@ module.exports = {
 };
 ```
 
-Now as the browserSync is running from your Drupal root (not the theme folder) you'll need to edit the file ```/themes/mainspring/components/data/data.json``` 
+Now as the browserSync is running from your Drupal root (not the theme folder) you'll need to edit the file ```/themes/mainspring/components/data/data.json```
 
 From
 ```
