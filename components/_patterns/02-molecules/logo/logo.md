@@ -1,8 +1,7 @@
 ---
 el: ".m-logo"
-title: "Logo"
+title: "Logo Brand"
 ---
 ## Logo
 
-
-Basic Default Logo
+Logo is typically a link to the home page
