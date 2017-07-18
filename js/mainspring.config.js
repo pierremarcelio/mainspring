@@ -1,23 +1,23 @@
-/* global jQuery, Drupal */
+(function ($) {
 
-import _once from 'lodash/once';
-
-(($) => {
+  'use strict';
   // Configuration that should only be ran once globally.
-  const init = _once((settings) => {
-    if (settings) {
-      // do stuff
-    }
+  var init = function () {
+
+    //svg for everybody (Fixes IE svgs)
+    // svg4everybody();
+
     // Init accordions.
     $('.m-accordion-item').accordion();
-  });
+
+  };
 
   try {
     if (Drupal && Drupal.behaviors) {
-      Drupal.behaviors.mainspringConfiguration = {
-        attach(context, settings) {
+      Drupal.behaviors.dcConfiguration = {
+        attach: function attach(context, settings) {
           init(settings);
-        },
+        }
       };
     } else {
       init();

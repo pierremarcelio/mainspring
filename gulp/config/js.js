@@ -10,7 +10,7 @@ global.config.js = {
   dest: paths.dist_folder + '/js/',
   sourceMapEmbed: true,
   babel: {
-    presets: ['es2015'],
+    presets: ['es2015-without-strict'],
   },
   hint: {
     enabled: false,
