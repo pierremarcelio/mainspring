@@ -21,6 +21,18 @@
 /// @param {integer} $rhythm-units [1] - units of "leading" defined by default
 ///   line-height
 
-@function ru($rhythm-units: 1) {
-  @return rem($base-line-height * $rhythm-units);
+@function ru($rhythm-units: 1, $unit: rem) {
+  @if ($unit == rem) {
+    @return rem($base-line-height * $rhythm-units);
+
+  }@elseif ($unit == em) {
+    @return em($base-line-height * $rhythm-units);
+
+  }@elseif ($unit == px) {
+    @return $base-line-height * $rhythm-units;
+
+  }@elseif ($unit != rem) {
+    @error 'Invalid Unit Passed to function';
+  }
 }
+
