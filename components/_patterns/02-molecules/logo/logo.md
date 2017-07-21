@@ -4,4 +4,4 @@ title: "Logo Brand"
 ---
 ## Logo
 
-Logo is typically a link to the home page
+Logo is a link to the home page
