@@ -146,9 +146,9 @@
     transform-style: preserve-3d;
 
     @if ($h-alignment == 'left') {
-      left: 0 + $svg-pad-left + $container-padding-left;
+      left: 0 + $svg-pad-left + ($svg-width / 2) + $container-padding-left;
     } @else {
-      right: 0 + $svg-pad-right;
+      right: 0 + $svg-pad-right - ($svg-width / 2) + $container-padding-right;
     }
 
     // SVG vertical positioning
