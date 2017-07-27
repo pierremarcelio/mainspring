@@ -43,11 +43,25 @@
  * @see html.html.twig
  */
 #}
-{% include "@layouts/page/page.twig"
-  with {
-    header_logo: drupal_block('mainspring_logo'),
-    header_menu_main: drupal_block('mainspring_menu_main'),
-    content: page.content.mainspring_main_content,
-    footer_year: "now"|date("Y")
-  }
-%}
+{# System Pages #}
+{% if not node %}
+  {% include '@layouts/page/_page--system.twig'
+    with {
+      header_logo: drupal_block('sitebranding'),
+      header_menu_main: drupal_block('mainnavigation'),
+      content: page.content,
+      footer_year: "now"|date("Y")
+    }
+  %}
+{# Node Page #}
+{% else %}
+  {% include '@layouts/page/page.twig'
+    with {
+      header_logo: drupal_block('sitebranding'),
+      header_menu_main: drupal_block('mainnavigation'),
+      content: page.content,
+      footer_year: "now"|date("Y")
+    }
+  %}
+
+{% endif %}
