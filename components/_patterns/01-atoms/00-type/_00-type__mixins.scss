@@ -5,13 +5,19 @@
 ///
 /// Modified to use REM & https://github.com/at-import/breakpoint
 /// Requires:
-/// * $breakpoints to be defined as a map in /layouts/_l--breakpoints.scss
+/// * $typography-breakpoints to be defined as a map in /base/breakpoints/_breakpoints.scss
 /// * Typography Maps to be defined in g-type--variables.scss
 /// @todo Examples
 /// @group type
 /// @param $fs-map - Defined Range of Font sizes
 /// @param $fs-breakpoints [$breakpoints] -  Specify a specific breakpoint
-@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+
+// Requires Global Map like this...
+// $typography-breakpoints: (
+//   type-large: $bp-type-large,
+// );
+
+@mixin font-size($fs-map, $fs-breakpoints: $typography-breakpoints) {
   @each $fs-breakpoint, $fs-font-size in $fs-map {
     @if $fs-breakpoint == null {
       @include make-font-size($fs-font-size);
@@ -20,9 +26,11 @@
       // $fs-breakpoints, use the value
       @if map-has-key($fs-breakpoints, $fs-breakpoint) {
         $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }@else {
+        @error '#{$fs-breakpoint} is not a valid key in $typography-breakpoints';
       }
 
-      @include respond-to ($fs-breakpoint) {
+      @include breakpoint ($fs-breakpoint) {
         @include make-font-size($fs-font-size);
       }
     }
