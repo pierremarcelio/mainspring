@@ -1,3 +1,7 @@
-<a href="{{ url }}" class="a-btn{{ variation }} {{ extra_classes }}">{{ text }}
+{#
+aria_labelby used if button is a "read more" link or other ambiguous label. Requires unique ID from text element on same page.
+#}
+
+<a href="{{ url }}" class="a-btn{{ variation }} {{ extra_classes }}"{% if aria_labelby %} aria-labelby="{{ aria_labelby }}"{% endif %}>{{ text }}
   {% if counter %}&nbsp;<span>{{counter}}</span>{% endif %}
 </a>

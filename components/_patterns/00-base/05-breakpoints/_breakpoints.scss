@@ -29,19 +29,25 @@ $bp-full-nav: 900px; // Full Nav appears
 $bp-max: 1200px; // Max width of outer container
 
 
-// Respond-to Syntax creates a map of breakpoints named after UI changes
-@include add-breakpoint('expanded-wrapper', $bp-expanded-wrapper);
-@include add-breakpoint('type-large', $bp-type-large);
-@include add-breakpoint('full-nav', $bp-full-nav);
-@include add-breakpoint('max', $bp-max);
+// Map array of breakpoints used by font-size mixin
+// Only include values breakpoints used to
+// change font Sizes
+//
+// See /atoms/type/type__mixins.scss
+// See /atoms/type/type__variables.scss
+
+$typography-breakpoints: (
+  type-large: $bp-type-large,
+);
+
 
 // Range Breakpoints Examples
 
 // $bp-type-large-to-full-nav: $bp-type-large ($bp-full-nav - 1px);
-// $breakpoints: add-breakpoint('type-large to full-nav', $bp-type-large-to-full-nav);
 
 
 // Singularity Variables
+// To be depricated in mainsrping and only used for grid visualizations
 // https://github.com/Team-Sass/Singularity/wiki/Creating-Grids
 //
 
