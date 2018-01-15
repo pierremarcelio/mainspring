@@ -21,18 +21,23 @@
 /// @param {integer} $rhythm-units [1] - units of "leading" defined by default
 ///   line-height
 
-@function ru($rhythm-units: 1, $unit: rem) {
+@function ru($rhythm-units: 1, $px-offset: 0px, $unit: rem) { //sass-lint:disable-line zero-unit
+
+  // Error Check $px-offset unit is correct
+  @if (unit($px-offset) != 'px') {
+    @error 'Error invalid unit - $px-offset must be a px';
+  }
+
   @if ($unit == rem) {
-    @return rem($base-line-height * $rhythm-units);
+    @return rem(($base-line-height * $rhythm-units) + $px-offset);
 
   }@elseif ($unit == em) {
-    @return em($base-line-height * $rhythm-units);
+    @return em(($base-line-height * $rhythm-units) + $px-offset);
 
   }@elseif ($unit == px) {
-    @return $base-line-height * $rhythm-units;
+    @return ($base-line-height * $rhythm-units) + $px-offset;
 
   }@elseif ($unit != rem) {
     @error 'Invalid Unit Passed to function';
   }
 }
-

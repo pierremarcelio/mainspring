@@ -32,9 +32,18 @@
     <js-placeholder token="{{ placeholder_token|raw }}">
   </head>
   <body{{ attributes }}>
-    <a href="#main-content" class="visually-hidden focusable">
+    <a href="#main-content" class="u-visually--hidden focusable">
       {{ 'Skip to main content'|t }}
     </a>
+
+    <!--[if lt IE 10]>
+    {% include "@molecules/info-box/01-info-box--browser.twig" %}
+    <![endif]-->
+
+    <div style="display:none;" data-browser="ie10">
+      {% include "@molecules/info-box/01-info-box--browser.twig" %}
+    </div>
+
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}

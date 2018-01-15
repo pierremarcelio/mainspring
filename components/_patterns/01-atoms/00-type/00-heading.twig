@@ -1,23 +1,69 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
 {# If no actual heading label was passed along, this component should not render. #}
 {% if heading.label %}
   {# Dynamically determine the title h level, or fallback to h2 by default. #}
-  {% set level = 'h' ~ (heading.level?:2) %}
-  {% set variation = '__h' ~ (heading.variation?:(heading.level?:2)) %}
+  {% set level = 'h' ~ (heading.level|default('2')) %}
+  {# Allow for a div to be used instead of a heading #}
+  {% set level = level == 'h0' ? 'div' : level %}
+  {% set variation = '__h' ~ (heading.variation|default(heading.level|default('2'))) %}
 
   {# heading id used for aria roles or anchor links. not rendered by default and  #}
-
+  {% spaceless %}
   <{{ level }}
-    class="a-heading{{variation}}"
-    data-align="{{ heading.align?:'left' }}"
-    data-theme="{{ heading.theme?:'normal' }}"
+    class="a-heading{{ variation }}
+      {% if heading.url %} has-link {% endif %}
+      {% if heading.theme %} a-heading{{ heading.theme }} {% endif %}
+    "
     {% if heading.id and not heading.url %}
     id="{{ heading.id }}"
     {% endif %}
   >
+
+    {# headings with links render with Arrow Icons on right
+    parent_url is passed to heading component when the title is inside
+    an a tag or form element an needs the arrow without a matching <a> tag #}
+    {% if heading.url or heading.parent_url %}
+
+    {# To keep icon inline with element required slicing the last work off the array and appending the icon to it see
+    https://craftcms.stackexchange.com/questions/15201/howscan-i-output-only-the-first-word-of-the-title-of-an-entry-in-a-template #}
+
+    {# Split title into 2 strings.
+    Then wrap the end word + symbol so they don't line-break #}
+    {% set label_last_word = heading.label|split(' ')|slice(-1, 1)|join %}
+    {% set label_words_without_last = heading.label|split(' ')|slice(0, -1)|join(' ') %}
+
     {% if heading.url %}
-      <a href="{{ heading.url }}" {% if heading.id and heading.url %}id="{{ heading.id }}"{% endif %}>{{ heading.label }}</a>
+      {# Create a tag + optional id #}
+      <a href="{{ heading.url }}"
+        {% if heading.id and heading.url %}
+          id="{{ heading.id }}"
+        {% endif %}
+      >
+    {% endif %}
+
+    {% autoescape %}{{ label_words_without_last|raw }}
+
+    <span class="a-heading__last-word">{{ label_last_word|raw }}{% endautoescape %}
+      <svg class="a-heading__icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#ico-angle-right">
+        </use>
+      </svg>
+    </span>
+
+      {% if heading.url %}
+        </a>
+      {% endif %}
+
     {% else %}
       {{ heading.label }}
     {% endif %}
   </{{ level }}>
+  {% endspaceless %}
+{% endif %}
+
+{% if pl_class %}
+  </div>
 {% endif %}

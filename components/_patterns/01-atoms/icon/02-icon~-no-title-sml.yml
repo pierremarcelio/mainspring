@@ -1,0 +1,5 @@
+icon:
+  id: ico-calendar
+  sprite:
+  variation: --sml
+pl_class: pl-icon-demo

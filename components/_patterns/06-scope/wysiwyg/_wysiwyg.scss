@@ -1,0 +1,109 @@
+// WYSIWYG / User Content
+// CKEDITOR's Default iframe class for the editor.
+
+// Author UX improvements
+.cke_editable { //sass-lint:disable-line class-name-format
+  padding: ru(1);
+}
+
+// Dark text on light background
+%s-wysiwyg--on-light-bg {
+  @extend %a-image--styles;
+
+  ul {
+    @extend %a-list--unordered;
+  }
+
+  ol {
+    @extend %a-list--ordered;
+  }
+
+  h1,
+  .a-heading__h1 {
+    @extend %a-heading__h1;
+  }
+
+  h2 {
+    @extend %a-heading__h2;
+  }
+
+  h3 {
+    @extend %a-heading__h3;
+  }
+
+  h4 {
+    @extend %a-heading__h4;
+  }
+
+  h5 {
+    @extend %a-heading__h5;
+  }
+
+  h6 {
+    @extend %a-heading__h6;
+  }
+}
+
+// Default (on white background)
+.s-wysiwyg,
+.cke_editable { // sass-lint:disable-line class-name-format
+  @extend %s-wysiwyg--on-light-bg;
+  @extend %u-remove-child--margin-top-bottom;
+
+  a:not([class]) {
+    @extend %a-link--a11y;
+  }
+}
+
+// Uncomment to use color variations
+// White text on dark background
+// %s-wysiwyg--on-dark-bg {
+//   @extend %a-image--styles;
+//   color: $white;
+
+//   ul {
+//     @extend %a-list--unordered-white;
+//   }
+
+//   ol {
+//     @extend %a-list--ordered-white;
+//   }
+
+//   h1 {
+//     @extend %a-heading__h1;
+//     @extend %a-heading--white;
+//   }
+
+//   h2 {
+//     @extend %a-heading__h2;
+//     @extend %a-heading--white;
+//   }
+
+//   h3 {
+//     @extend %a-heading__h3;
+//     @extend %a-heading--white;
+//   }
+
+//   h4 {
+//     @extend %a-heading__h4;
+//     @extend %a-heading--white;
+//   }
+
+//   h5 {
+//     @extend %a-heading__h5;
+//     @extend %a-heading--white;
+//   }
+
+//   h6 {
+//     @extend %a-heading__h6;
+//     @extend %a-heading--white;
+//   }
+// }
+
+// .s-wysiwyg--bg-blue {
+//   @extend %s-wysiwyg--on-dark-bg;
+
+//   a:not([class]) {
+//     @extend %a-link--a11y-white-on-blue;
+//   }
+// }

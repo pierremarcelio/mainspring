@@ -81,43 +81,109 @@
  */
 
 /* add clearfix*/
-.sg__wrapper {
+/* add clearfix*/
+.pl__wrapper {
   position: relative;
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 
-.sg__wrapper--xlight-grey {
+.pl__wrapper--xsml {
   position: relative;
   margin-bottom: 2rem;
-  padding: 1rem;
-  background-color: #f8f8f8;
+  padding: 2rem;
+  max-width:  200px;
 }
 
-.sg__wrapper--xlight-grey--border {
+.pl__wrapper--sml {
   position: relative;
   margin-bottom: 2rem;
-  padding: 0 1rem;
-  background-color: #f8f8f8;
+  padding: 2rem;
+  max-width:  400px;
+}
+
+.pl__wrapper--sml-no-padding {
+  position: relative;
+  margin-bottom: 2rem;
+  max-width:  400px;
+}
+
+.pl__wrapper--med {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  max-width:  600px;
+}
+
+.pl__wrapper--med-no-padding {
+  position: relative;
+  margin-bottom: 2rem;
+  max-width:  600px;
+}
+
+.pl__wrapper--med-x-padding {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 6rem;
+  max-width:  600px;
+}
+
+.pl__wrapper--xmed {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  max-width:  700px;
+}
+
+.pl__wrapper--lrg-no-padding {
+  position: relative;
+  margin-bottom: 2rem;
+  max-width:  1000px;
+}
+
+.pl__wrapper--lrg {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  max-width:  1000px;
+}
+
+.pl__wrapper--xlrg {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  max-width:  1200px;
+}
+
+.pl__wrapper--grey-light {
+  position: relative;
+  margin-bottom: 2rem;
+  background-color: #9b9b9b;
+}
+
+.pl__wrapper--grey-xlight {
+  position: relative;
+  margin-bottom: 2rem;
+  background-color: #cccccc;
+}
+
+.pl__wrapper--grey-xlight--border {
+  position: relative;
+  margin-bottom: 2rem;
+  background-color: #cccccc;
   border: 1px solid #e4e4e4;
 }
 
-.sg__wrapper--light-grey {
-  background-color: #f8f8f8;
+.pl__wrapper--grey-xxlight {
+  position: relative;
+  margin-bottom: 2rem;
+  background-color: #e6e6e6;
 }
 
-.sg__wrapper--sml-light-grey {
-  background-color: #f8f8f8;
-  max-width: 300px;
-}
-
-.sg__wrapper--eq {
-  background-color: #f8f8f8;
-  max-width: 700px;
-}
-
-.sg__wrapper--img {
-  max-width: 900px;
+.pl__wrapper--grey-xxxlight {
+  position: relative;
+  margin-bottom: 2rem;
+  background-color: #f2f2f2;
 }
 
 /***** DEMO CLASSES *****/
@@ -151,4 +217,22 @@
   background-color: #666;
   min-height: 300px;
   text-align: center;
+}
+
+
+.pl-icon-demo {
+  display:  inline-block;
+  padding: 1rem;
+  /* color: #00819c; */
+  background-color: #efefef;
+  text-align: center;
+}
+
+.pl-icon-demo .a-icon,
+.pl-icon-demo .a-icon--sml,
+.pl-icon-demo .a-icon--med,
+.pl-icon-demo .a-icon--xmed,
+.pl-icon-demo .a-icon--lrg {
+  margin-right:  auto;
+  margin-left:  auto;
 }

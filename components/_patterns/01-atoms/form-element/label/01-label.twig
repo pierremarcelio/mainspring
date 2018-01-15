@@ -1,0 +1,3 @@
+{% if label_title is not empty or required %}
+  <label{{ attributes.addClass(classes) }}>{{ label_title }}{% if required%}<span>*</span>{% endif %}</label>
+{% endif %}

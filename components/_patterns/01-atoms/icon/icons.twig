@@ -1,0 +1,22 @@
+
+<div class="a-icons--{{ sprite }} pl-icon-demo"><h2> {{ sprite }}.svg</h2>
+{% for icon in icons %}
+<div class="pl-icon-demo">
+  {% include "@atoms/icon/01-icon.twig"
+    with {
+      icon: {
+        title: icon.title,
+        id: icon.id,
+        sprite: sprite,
+        variation: '--xmed'
+      },
+      pl_class: '',
+    }
+  %}
+  <p class="a-type--small">
+    #{{ icon.id }}<br />
+    {{ icon.title }}
+  </p>
+</div>
+{% endfor %}
+</div>

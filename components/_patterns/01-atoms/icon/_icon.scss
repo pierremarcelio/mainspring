@@ -1,0 +1,125 @@
+// Default Size Icons
+
+%a-icon--core {
+  display: block;
+  // margin-right: ru(0.25);
+  fill: currentColor;
+
+  &:focus {
+    outline: 1px dashed palette(grey, xlight);
+  }
+}
+
+%a-icon,
+.a-icon {
+  @extend %a-icon--core;
+  @include svg-centered(
+    $svg-width: ru(1.5),
+    $svg-height: ru(1.5),
+    $wrapper-width: ru(2),
+    $wrapper-height: ru(2),
+    $svg-class: 'a-icon__svg',
+    $x-offset: 0,
+    $y-offset: 0,
+    $layout-mode: 'margin');
+}
+
+%a-icon--xsml,
+.a-icon--xsml {
+  @extend %a-icon--core;
+  @include svg-centered(
+    $svg-width: ru(0.75),
+    $svg-height: ru(0.75),
+    $wrapper-width: ru(0.75),
+    $wrapper-height: ru(0.75),
+    $svg-class: 'a-icon__svg',
+    $x-offset: 0,
+    $y-offset: 0,
+    $layout-mode: 'margin');
+}
+
+%a-icon--sml,
+.a-icon--sml {
+  @extend %a-icon--core;
+  @include svg-centered(
+    $svg-width: ru(1),
+    $svg-height: ru(1),
+    $wrapper-width: ru(1),
+    $wrapper-height: ru(1),
+    $svg-class: 'a-icon__svg',
+    $x-offset: 0,
+    $y-offset: 0,
+    $layout-mode: 'margin');
+}
+
+%a-icon--med,
+.a-icon--med {
+  @extend %a-icon--core;
+  @include svg-centered(
+    $svg-width: ru(1.75),
+    $svg-height: ru(1.75),
+    $wrapper-width: ru(2.5),
+    $wrapper-height: ru(2.5),
+    $svg-class: 'a-icon__svg',
+    $x-offset: 0,
+    $y-offset: 0,
+    $layout-mode: 'margin');
+}
+
+%a-icon--xmed,
+.a-icon--xmed {
+  @extend %a-icon--core;
+  @include svg-centered(
+    $svg-width: ru(2),
+    $svg-height: ru(2),
+    $wrapper-width: ru(3),
+    $wrapper-height: ru(3),
+    $svg-class: 'a-icon__svg',
+    $x-offset: 0,
+    $y-offset: 0,
+    $layout-mode: 'margin');
+}
+
+%a-icon--lrg,
+.a-icon--lrg {
+  @extend %a-icon--core;
+  @include svg-centered(
+    $svg-width: ru(4),
+    $svg-height: ru(4),
+    $wrapper-width: ru(4),
+    $wrapper-height: ru(4),
+    $svg-class: 'a-icon__svg',
+    $x-offset: 0,
+    $y-offset: 0,
+    $layout-mode: 'margin');
+}
+
+%a-icon--xlrg,
+.a-icon--xlrg {
+  @extend %a-icon--core;
+  @include svg-centered(
+    $svg-width: ru(5),
+    $svg-height: ru(5),
+    $wrapper-width: ru(5),
+    $wrapper-height: ru(5),
+    $svg-class: 'a-icon__svg',
+    $x-offset: 0,
+    $y-offset: 0,
+    $layout-mode: 'margin');
+}
+
+// Dropdown Menu Icon
+%a-icon--drop,
+.a-icon--drop {
+  @extend %a-icon--core;
+  @include svg-centered(
+    $svg-width: ru(0.5),
+    $svg-height: ru(0.5),
+    $wrapper-width: ru(0.5),
+    $wrapper-height: ru(0.5),
+    $svg-class: 'a-icon__svg',
+    $x-offset: 0,
+    $y-offset: 0,
+    $layout-mode: 'margin');
+  top: 1px;
+}

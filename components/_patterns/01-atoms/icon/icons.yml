@@ -1,0 +1,65 @@
+sprite: sprite-ui
+icons:
+  -
+    id: 'ico-angle-double-left'
+    title: 'n/a'
+  -
+    id: 'ico-angle-double-right'
+    title: 'n/a'
+  -
+    id: 'ico-angle-left'
+    title: 'n/a'
+  -
+    id: 'ico-angle-right'
+    title: 'n/a'
+  -
+    id: 'ico-calendar'
+    title: 'n/a'
+  -
+    id: 'ico-checkmark'
+    title: 'n/a'
+  -
+    id: 'ico-arrow-down'
+    title: 'n/a'
+  -
+    id: 'ico-arrow-left'
+    title: 'n/a'
+  -
+    id: 'ico-arrow-right'
+    title: 'n/a'
+  -
+    id: 'ico-chevron-down'
+    title: 'n/a'
+  -
+    id: 'ico-chevron-left'
+    title: 'n/a'
+  -
+    id: 'ico-chevron-right'
+    title: 'n/a'
+  -
+    id: 'ico-chevron-up'
+    title: 'n/a'
+  -
+    id: 'ico-close'
+    title: 'n/a'
+  -
+    id: 'ico-delete'
+    title: 'n/a'
+  -
+    id: 'ico-menu'
+    title: 'n/a'
+  -
+    id: 'ico-minus'
+    title: 'n/a'
+  -
+    id: 'ico-plus'
+    title: 'n/a'
+  -
+    id: 'ico-quote-left'
+    title: 'n/a'
+  -
+    id: 'ico-quote-right'
+    title: 'n/a'
+  -
+    id: 'ico-search'
+    title: 'n/a'

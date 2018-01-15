@@ -1,0 +1,20 @@
+{# By Default Chip is just a text label #}
+
+{# Link Variation Eg Tag links to list of items w/ Tag #}
+{% if chip.variation == 'link'%}
+  <a class="a-chip--{{ chip.variation }}" href="{{ chip.url }}">{{ chip.text }}</a>
+
+{% elseif chip.variation == 'filter'%}
+
+  <button class="a-chip--{{ chip.variation }}" {{ chip.attributes }}>
+    {{ chip.text }}
+      <svg class="a-svg">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#ico-close">
+        </use>
+      </svg>
+  </button>
+
+{# Assumes Basic Div if no variation declared #}
+{% else %}
+  <div class="a-chip">{{ chip.text }}</div>
+{% endif %}

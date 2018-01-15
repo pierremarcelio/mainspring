@@ -1,8 +1,12 @@
 # Ignore compiled files.
-dist
 
-# Pattern Lab (ignored initially)
+# Pattern Lab
 pattern-lab
+
+local.gulp-config.js
+
+# We're not worried that PL runs exactly the same version on each local machine / CI build
+composer.lock
 
 # NPM
 node_modules
@@ -12,6 +16,4 @@ npm-debug.log
 ######################
 .DS_Store*
 ehthumbs.db
-Icon
-
-local.gulp-config.js
+!Icon

@@ -1,4 +1,0 @@
-heading:
-  label: "Heading - By default heading are level 2 and left aligned"
-  level: 2 #default: 2
-  align: "left" #default: left
