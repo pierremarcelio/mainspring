@@ -30,8 +30,7 @@
   top: 50%;
   right: ru(0.25);
   transform: translateY(-50%);
-  stroke: $color-primary-dark;
-  fill: none;
+  fill: $color-primary-dark;
 }
 
 .m-accordion-item__svg--expand {

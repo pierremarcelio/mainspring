@@ -1,0 +1,48 @@
+%m-message,
+.m-message {
+  background-color: palette(grey, light);
+  padding: ru(1);
+  width: 100%;
+  color: $white;
+
+  @include breakpoint($bp-full-nav) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.m-message__wrapper {
+  // @extend %l-container-h__wrapper;
+
+  @include breakpoint($bp-full-nav) {
+    padding: 0 $gutter;
+  }
+}
+
+.m-message__title {
+  @extend %a-heading__h2;
+  color: $white;
+}
+
+.m-message__text {
+  @extend %u-remove-child--margin-top-bottom;
+}
+
+
+//Browser update message
+.m-message--browser {
+  @extend %m-message;
+
+  background-color: palette(blue, dark);
+
+  a {
+    @extend %a-link--white;
+
+    &:visited,
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}

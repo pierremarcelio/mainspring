@@ -1,0 +1,20 @@
+.m-tag-filter {
+  @extend %u-clearfix;
+  // Add min-height to avoid the content below the filter moving when there is no tag to when there is.
+  min-height: ru(1.75); 
+}
+
+.m-tag-filter__label {
+  float: left;
+  margin-top: ru(0.25);
+  margin-right: ru(0.5);
+}
+
+// .m-tag-filter__menu {
+
+// }
+
+.m-tag-filter__item {
+  display: inline-block;
+  margin-right: ru(0.5);
+}

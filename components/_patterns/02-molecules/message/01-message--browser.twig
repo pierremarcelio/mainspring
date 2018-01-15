@@ -1,0 +1,17 @@
+{% embed '@molecules/message/00-message.twig'
+  with {
+    infobox_variation: '--browser',
+    infobox_title: true
+  }
+%}
+  {% block infobox_title %}
+    {% trans %}Unsupported Browser{% endtrans %}
+  {% endblock %}
+
+  {% block infobox_text %}
+    <p>
+      {% trans %}Your Browser is out of date and is not supported by this website.<br/>Please upgrade to <a href="http://www.mozilla.org/en-US/firefox"><strong><em>Firefox</em></strong></a>, <a href="http://www.google.com/chrome/"><strong><em>Chrome</em></strong></a>, <a href="http://windows.microsoft.com/en-ca/internet-explorer/download-ie"><strong><em>Internet Explorer 11</em></strong></a>, or <a href="https://www.microsoft.com/en-ca/windows/microsoft-edge"><strong><em>Microsoft Edge</em></strong></a>.{% endtrans %}
+    </p>
+  {% endblock %}
+
+{% endembed %}

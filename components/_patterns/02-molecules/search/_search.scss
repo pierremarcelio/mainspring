@@ -1,68 +1,91 @@
 .m-search {
   position: relative;
-  margin-bottom: ru(0.75);
+  margin-bottom: ru(0.5);
   width: 100%;
+  vertical-align: middle;
 
-  @include respond-to ('expanded-wrapper') {
+  @include breakpoint ($bp-expanded-wrapper) {
     width: 75%;
   }
 
-  @include respond-to ('type-large') {
+  @include breakpoint ($bp-type-large) {
     width: 50%;
   }
 
-  @include respond-to ('full-nav') {
+  @include breakpoint ($bp-full-nav) {
     width: 100%;
   }
 }
 
-.m-search__textbox {
-  label {
-    @extend %u-visually--hidden;
-  }
-
-  input {
-    border: 1px solid palette(grey, light);
-    padding-top: ru(0.25);
-    padding-right: ru(1.5);
-    padding-bottom: ru(0.25);
-    padding-left: ru(0.2);
-    width: 100%;
-  }
+.m-search--mobile {
+  position: relative;
+  width: 100%;
 }
 
-.m-search__btn {
-  position: absolute;
-  right: -3px;
-  bottom: -3px;
+.m-search__search {
+  position: relative;
+  margin-right: ru(1.25);
+  margin-bottom: 0;
+}
+
+.m-search__search .m-form-item__label {
   margin: 0;
-  width: ru(1.5);
-  height: ru(1.5);
-  color: palette(grey);
+}
 
-  input {
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
-    width: ru(1.25);
-    height: ru(1.25);
-    text-indent: -99999px;
+.m-search__search label {
+  @extend %u-visually--hidden;
+}
+
+.m-search__search .m-form-item__element {
+  margin: 0;
+}
+
+input.m-search__textbox {
+  border: 1px solid palette(grey, light);
+  padding: ru(0.125) ru(1.25) ru(0.125) ru(0.25);
+  height: ru(1.25);
+
+  .m-search--mobile & {
+    padding-right: ru(0.25);
+    padding-left: ru(1.5);
+  }
+}
+
+.m-search__actions {
+  position: absolute;
+  top: ru(0.125);
+  right: ru(0);
+  width: ru(1);
+  height: ru(1);
+
+  .m-search--mobile & {
+    left: ru(0.25);
   }
 
-  svg {
-    @extend %a-svg--fill;
-    position: absolute;
-    top: 5px;
-    left: 3px;
-    cursor: pointer;
-    width: ru(1);
-    height: ru(1);
-    color: palette(grey, dark);
+  // Preload hover image to avoid blinking.
+  &:after {
+    display: none;
+    content: url('/themes/ms/assets/svg/svg-art/ico-search--blue-dark.svg');
+  }
+}
 
-    &:hover,
-    &:focus,
-    &:active {
-      color: palette(grey);
-    }
+input.m-search__btn {
+  border: 0;
+  background-color: transparent;
+  background-image: url('/themes/ms/assets/svg/svg-art/ico-search--blue.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+  padding: 0;
+  width: ru(1);
+  height: ru(1);
+  overflow: hidden;
+  text-indent: 100%;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-image: url('/themes/ms/assets/svg/svg-art/ico-search--blue-dark.svg');
   }
 }

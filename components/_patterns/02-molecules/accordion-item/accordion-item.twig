@@ -3,8 +3,18 @@
   <a class="m-accordion-item__label" href="#" data-accordion-component="label">
     <div class="m-accordion-item__label-text">{{ accordion_label }}</div>
     <div class="m-accordion-item__label-icon">
-      <svg class="svg__core m-accordion-item__svg--expand"><use xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#circle-arrow-down"></use></svg>
-      <svg class="svg__core m-accordion-item__svg--collapse"><use xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#circle-arrow-up"></use></svg>
+{#       <svg class="svg__core m-accordion-item__svg--expand"><use xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#ico-chevron-down"></use></svg>
+      <svg class="svg__core m-accordion-item__svg--collapse"><use xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#ico-chevron-up"></use></svg> #}
+
+      <svg class="a-svg m-accordion-item__svg--expand">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#ico-chevron-down">
+        </use>
+      </svg>
+
+      <svg class="a-svg m-accordion-item__svg--collapse">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#ico-chevron-up">
+        </use>
+      </svg>
     </div>
   </a>
 

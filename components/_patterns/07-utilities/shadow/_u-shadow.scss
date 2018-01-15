@@ -1,0 +1,55 @@
+%u-shadow__overlay-core {
+  position: relative;
+
+  &:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    content: '';
+  }
+}
+
+%u-shadow__overlay {
+  @extend %u-shadow__overlay-core;
+
+  &:after {
+    background-image: linear-gradient(to top, $shadow, rgba(0, 0, 0, 0));
+    height: ru(1);
+  }
+}
+
+%u-shadow--white__overlay {
+  @extend %u-shadow__overlay-core;
+
+  &:after {
+    background-image: linear-gradient(to top, $white, rgba(255, 255, 255, 0));
+    height: ru(3.5);
+    // transition: opacity 0.25s;
+    transition: height 0.25s ease-out;
+  }
+
+  // Using javscript allow the gradient to be removed.
+  // Used with text-fade.js to show text if it is not overflowed.
+  &[data-shadow=off] {
+
+    &:after {
+      // opacity: 0;
+      height: 0;
+    }
+  }
+}
+
+%u-shadow--grey__overlay {
+  @extend %u-shadow__overlay-core;
+
+  &:after {
+    background-image: linear-gradient(to top, palette(grey, xxlight), rgba(230, 230, 230, 0));
+    height: ru(3.5);
+  }
+}
+
+%u-shadow__box {
+  box-shadow: 0 2px 8px 4px rgba(0, 0, 0, 0.1);
+}
+

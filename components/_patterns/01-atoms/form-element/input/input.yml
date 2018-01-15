@@ -10,4 +10,4 @@ attributes:
     placeholder: Placeholder for textfield
     required: required
     aria-required: true
-pl_class: pl__wrapper--blue pl__wrapper--med
+pl_class: pl__wrapper--med

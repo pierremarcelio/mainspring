@@ -63,6 +63,10 @@
     {
       "name": "$red",
       "value": "#a00000"
+    },
+    {
+      "name": "$red-light",
+      "value": "#fbe3e4"
     }
   ],
   "meta": {

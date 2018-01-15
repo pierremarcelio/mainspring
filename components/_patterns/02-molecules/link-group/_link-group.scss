@@ -1,0 +1,10 @@
+.m-link-group__title {
+  @extend %a-type--semibold;
+  margin-bottom: ru(0.5);
+  text-transform: uppercase;
+  color: $white;
+}
+
+.m-link-group__item {
+  margin-bottom: ru(0.25);
+}

@@ -1,6 +1,5 @@
 %a-video__core {
   position: relative;
-  padding-top: 35px;
   height: 0;
   overflow: hidden;
 
@@ -24,4 +23,5 @@
 .a-video--4x3 {
   @extend %a-video__core;
   padding-bottom: 3/4 * 100%;
+
 }

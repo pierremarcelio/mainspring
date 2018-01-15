@@ -24,6 +24,7 @@ $blue-xlight: #b9b9e2;
 
 // Red
 $red: #a00000;
+$red-light: #fbe3e4;
 
 
 
@@ -56,5 +57,6 @@ $palettes: (
   ),
   red: (
     base: $red,
+    light: $red-light,
   ),
 );

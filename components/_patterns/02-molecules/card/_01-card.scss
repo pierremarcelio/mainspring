@@ -1,0 +1,75 @@
+// Default Card is portrait orientation and has images
+%m-card,
+.m-card {
+  @extend %u-shadow__box;
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  width: 100%; // Required for IE 11 Hack
+}
+
+// Image appears in m-card and m-card--reveal, m-card--landscape
+%m-card__banner,
+.m-card__banner {
+  @extend %u-shadow__overlay;
+  flex-shrink: 0;
+  width: 100%;  // Required for IE 11 Hack
+
+  &.is-link {
+    @extend %m-card__banner;
+    @extend %u-animate-background-color;
+    background-color: rgba(0, 0, 0, 0);
+
+    img,
+    picture {
+      @extend %u-animate-opacity;
+      // IE 11 hack to fix https://github.com/philipwalton/flexbugs#5-column-flex-items-dont-always-preserve-intrinsic-aspect-ratios
+      // width: 100%;
+      // height: auto;
+
+      @supports (mix-blend-mode: multiply) {
+        mix-blend-mode: multiply;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: palette(blue, xlight);
+
+      img,
+      picture {
+        opacity: 0.7;
+
+        @supports (mix-blend-mode: multiply) {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+// Card Titles
+%m-card__title,
+.m-card__title {
+  padding-top: ru(1);
+  padding-right: ru(1);
+  padding-left: ru(1);
+}
+
+.m-card__body,
+%m-card__body {
+  @extend %u-remove-child--margin-top-bottom;
+  flex-grow: 1;
+  margin-bottom: ru(1);
+  padding-right: ru(1);
+  padding-left: ru(1);
+}
+
+// Buttons / Links at bottom of cards
+%m-card__actions,
+.m-card__actions {
+  margin-bottom: ru(1);
+  padding-right: ru(1);
+  padding-left: ru(1);
+}

@@ -1,0 +1,31 @@
+name: textfield_input
+attributes:
+  Attribute():
+    class: []
+label_display: before #By default is "before" but can also be "after" or "invisible"
+label:
+  join():
+    - include():
+        pattern: atoms-label
+        with:
+          label_title: "Label for input element"
+          required: TRUE
+          attributes:
+            Attribute():
+              for: textfield_input
+              class: ['a-label--is-required']
+#prefix: "PL prefix" #Optional
+description_display: "after" #By default is "after" but can also be "after" or " invisible". If "invisible" use "description_classes: 'u-visually--hidden'"
+description:
+  content: "This is the PL description for the input element"
+  attributes:
+    Attribute():
+      class: []
+children:
+  join():
+    - include():
+        pattern: atoms-input  #include input atom with default values (textfield is default)
+          pl_class: ''
+#suffix: "PL suffix" #Optional
+gentle_form:
+  required: "This field is required"

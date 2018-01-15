@@ -6,19 +6,20 @@
   margin-top: ru(1);
   margin-bottom: ru(1);
 
-  // We need to breakpoits
-  @include respond-to('expanded-wrapper') {
-    margin-right: 0;
-    margin-left: 0;
-  }
+  // // We need to breakpoits
+  // @include breakpoint($bp-expanded-wrapper) {
+  //   margin-right: 0;
+  //   margin-left: 0;
+  // }
 
 }
 
-// Each part of the pager is wrapped in a group that
-// is vertically centered for small screens
+// // Each part of the pager is wrapped in a group that
+// // is vertically centered for small screens
 
 %m-pager__group-core {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   flex-grow: 1;
@@ -27,88 +28,60 @@
   // They render to maintain spacing / Centering of UI
   flex-basis: ru(3.25);
 
-  @include respond-to('expanded-wrapper') {
+  > a {
+    &:first-of-type {
+      margin-bottom: ru(0.75);
+    }
+  }
+
+  @include breakpoint($bp-expanded-wrapper) {
+    flex-wrap: nowrap;
     flex-basis: ru(4.25);
+
+    > a {
+      &:first-of-type {
+        margin-right: ru(0.75);
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
 .m-pager__group-backwards {
   @extend %m-pager__group-core;
+  justify-content: flex-start;
 }
 
 .m-pager__group-forwards {
   @extend %m-pager__group-core;
+  justify-content: flex-end;
 }
 
-.m-pager__btn-first {
-  @extend %a-btn--core;
-  @extend %a-btn--palette-white;
-
-  @include svg-centered(ru(1),  ru(1),  ru(1.5),  ru(2), $x-offset: -3%, $layout-mode: 'margin');
-  margin-right: ru(0.25);
-
-  // We need to breakpoits
-  @include respond-to('expanded-wrapper') {
-    @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: -5%, $layout-mode: 'margin');
-  }
-
-  svg {
-    fill: palette(grey, dark);
-  }
-}
+// .m-pager__btn-first {
+//   @extend %a-btn--secondary;
+//   margin-left: ru(0.75);
+// }
 
 
 .m-pager__btn-prev {
-  @extend %a-btn--core;
-  @extend %a-btn--palette-white;
-
-  @include svg-centered(ru(1.25),  ru(1.25),  ru(1.5),  ru(2), $x-offset: -2%, $layout-mode: 'margin');
-
-  @include respond-to('expanded-wrapper') {
-    @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: -3%, $layout-mode: 'margin');
-  }
-
-  svg {
-    fill: palette(grey, dark);
-  }
+  @extend %a-btn--secondary;
+  margin-left: ru(0.75);
 }
 
 .m-pager__btn-next {
-  @extend %a-btn--core;
-  @extend %a-btn--palette-white;
-
-  @include svg-centered(ru(1.25),  ru(1.25),  ru(1.5),  ru(2), $x-offset: 3%, $layout-mode: 'margin');
-
-  // We need to breakpoits
-  @include respond-to('expanded-wrapper') {
-    @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: 5%, $layout-mode: 'margin');
-  }
-
-  svg {
-    fill: palette(grey, dark);
-  }
+  @extend %a-btn--secondary;
+  margin-left: ru(0.75);
 }
 
 // c-btn--icon-large c-btn--secondary
-.m-pager__btn-last {
-  @extend %a-btn--core;
-  @extend %a-btn--palette-white;
+// .m-pager__btn-last {
+//   // @extend %a-btn--core;
+//   // @extend %a-btn--white;
+//   @extend %a-btn--secondary;
+// }
 
-  @include svg-centered(ru(1),  ru(1),  ru(1.5),  ru(2), $x-offset: 2%, $layout-mode: 'margin');
-  margin-left: ru(0.25);
-
-  // We need to breakpoits
-  @include respond-to('expanded-wrapper') {
-    @include svg-centered(ru(1.5),  ru(1.5),  ru(2),  ru(2), $x-offset: 5%, $layout-mode: 'margin');
-  }
-
-  svg {
-    fill: palette(grey, dark);
-  }
-}
-
-// Pages List. Will Shrink, but not grow. On small screens
-//
+// // Pages List. Will Shrink, but not grow. On small screens
+// //
 .m-pager__items {
   display: flex;
   flex-wrap: wrap;
@@ -119,43 +92,43 @@
   margin-left: ru(0.25);
 
   // We need to breakpoits
-  @include respond-to('expanded-wrapper') {
+  @include breakpoint($bp-expanded-wrapper) {
     margin-right: ru(0.5);
     margin-left: ru(0.5);
   }
 }
 
+%m-pager--btn-spacing {
+  display: block;
+  margin-right: ru(0.25);
+  margin-bottom: ru(0.25);
+  margin-left: ru(0.25);
+  padding: ru(0.25) ru(0.333);
+  min-width: ru(1.5);
+  text-align: center;
+}
+
 %m-pager__btn,
 .m-pager__item a {
-  $underline-color: $color-secondary;
-
-  display: inline;
-  margin-right: ru(0.25);
-  margin-left: ru(0.25);
-  background-color: transparent;
-  background-image: linear-gradient(to right, $underline-color 0%, $underline-color 100%);
-  background-repeat: repeat-x;
-  background-position: bottom center; // Default for old safari
-  background-position: bottom 0.28em center; //sass-lint:disable-line no-duplicate-properties
-  background-size: 100% 1px;
-  color: palette(grey, dark);
-  text-shadow: none;
-
-  &:focus,
-  &:hover,
-  &:active {
-    background-color: transparent;
-    background-size: 100% 2px;
-    color: palette(grey, xdark);
-  }
+  @extend %a-btn--secondary;
+  @extend %m-pager--btn-spacing;
 }
 
 %m-pager__btn--is-active,
 .m-pager__item-is-active a {
-  display: inline;
+  @extend %a-btn--core;
+  @extend %m-pager--btn-spacing;
+  border-color: palette(blue);
+  background-color: palette(blue);
   cursor: default;
-  padding: 0 ru(0.25);
-  text-decoration: none;
-  color: palette(grey, dark);
-  font-weight: 400;
+  color: $white;
+
+}
+
+.m-pager__item-prev--ellipsis,
+.m-pager__item-next--ellipsis {
+  display: none;
+  // @extend %a-btn--core;
+  // border-color: grey;
+  // cursor: default;
 }

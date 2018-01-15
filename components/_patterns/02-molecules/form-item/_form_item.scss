@@ -1,0 +1,106 @@
+%m-form-item,
+.m-form-item {
+  @extend %u-remove-child--margin-bottom;
+  margin-bottom: ru(1);
+
+  input.is-invalid {
+    border-color: palette(red, light);
+    color: palette(red, light);
+  }
+}
+
+%m-form-item__label,
+.m-form-item__label {
+  margin-bottom: ru(0.5);
+
+  .is-light-theme & {
+    color: $white;
+  }
+}
+
+.m-form-item__element {
+  margin-bottom: ru(0.25);
+
+  &.has-error {
+
+    input {
+      border-color: palette(red, light);
+    }
+  }
+}
+
+%m-form-item__error,
+.m-form-item__error {
+  border-radius: 3px;
+  background-color: palette(red, light);
+  padding: ru(0.25);
+}
+
+%m-form-item__description,
+.m-form-item__description {
+  @extend %a-type--small;
+  color: palette(grey, light);
+}
+
+%input-label {
+  input[type='checkbox'] + label,
+  input[type='radio'] + label {
+    display: inline-block;
+    background: url('img/icons/src/checkbox-empty-blue.svg') no-repeat scroll left top 0.25em transparent;
+    background-size: ru(0.7) ru(0.7);
+    padding-left: ru(1);
+    line-height: ru(1.05);
+  }
+
+  input[type='checkbox']:checked + label {
+    background-image: url('img/icons/src/checkbox-checked-blue.svg');
+    background-size: ru(0.8) ru(0.7);
+  }
+
+  input[type='radio'] + label {
+    background-image: url('img/icons/src/radio-empty-blue.svg');
+  }
+
+  input[type='radio']:checked + label {
+    background-image: url('img/icons/src/radio-selected-blue.svg');
+  }
+}
+
+%m-form-item--checkbox,
+.m-form-item--checkbox {
+  @extend %input-label;
+  margin-bottom: 0;
+
+  .a-label,
+  .a-label--is-required {
+    @extend %a-type--small;
+    display: inline-block;
+    margin-right: ru(0.25);
+    // font-weight: $base-font-weight;
+  }
+
+  .m-form-item__error {
+    display: inline-block;
+  }
+}
+
+%m-form-item--radio,
+.m-form-item--radio {
+  @extend %input-label;
+  margin-bottom: 0;
+
+  .a-label,
+  .a-label--is-required {
+    display: inline-block;
+    // font-weight: $base-font-weight;
+  }
+}
+
+.m-form-item--actions {
+  margin-bottom: ru(1);
+  text-align: right;
+
+  > input {
+    display: inline-block;
+  }
+}
