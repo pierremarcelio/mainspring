@@ -20,7 +20,7 @@
 .u-word-break--pipe {
   display: block;
 
-  @include respond-to('full-nav') {
+  @include breakpoint($bp-full-nav) {
     display: inline;
 
     &:not(:last-of-type)::after {

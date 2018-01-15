@@ -1,0 +1,19 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+<div class="o-carousel__wrapper">
+  <div class="l-container-h__wrapper">
+    <div class="o-carousel" data-carousel="flickity">
+      {% for item in items %}
+        <div class="o-carousel__item">
+          {{ item }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% if pl_class %}
+  </div>
+{% endif %}

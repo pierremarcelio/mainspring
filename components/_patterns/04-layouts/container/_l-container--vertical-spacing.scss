@@ -1,0 +1,57 @@
+// Special Spacing Cases for container wrappers in different circumstances
+%l-container--vertical-spacing__content,
+.l-main__content {
+
+  > * {
+    margin-top: ru(2);
+    margin-bottom: ru(2);
+
+    &.u-bg--blue,
+    &.u-bg--blue-dark,
+    &.u-bg--grey-xlight,
+    &.u-bg--grey-xxlight,
+    &.u-bg--grey-xxxlight {
+      margin-top: ru(3);
+      margin-bottom: ru(3);
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // NOTE: With this spacing if there are only 2 items in content there is no spacing between them.
+
+  // Default spacing with most sections (white background)
+  // > div:not(:first-child):not(:last-child) {
+  //   margin-top: ru(2);
+  //   margin-bottom: ru(2);
+
+  //   &.u-bg--blue,
+  //   &.u-bg--blue-dark,
+  //   &.u-bg--grey-xlight,
+  //   &.u-bg--grey-xxlight,
+  //   &.u-bg--grey-xxxlight {
+  //     margin-top: ru(3);
+  //     margin-bottom: ru(3);
+  //   }
+  // }
+}
+
+// NOTE: Causes white gaps in footer between CTA and Related Content.
+// .l-main__footer {
+//   // Default spacing with most sections (white background)
+//   > div {
+//     &.u-bg--blue,
+//     &.u-bg--blue-dark,
+//     &.u-bg--grey-xlight,
+//     &.u-bg--grey-xxlight,
+//     &.u-bg--grey-xxxlight {
+//       margin-top: ru(3);
+//     }
+//   }
+// }

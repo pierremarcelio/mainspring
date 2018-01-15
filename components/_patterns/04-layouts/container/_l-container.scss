@@ -1,0 +1,183 @@
+// Containers are outer abtract layout elements
+// For controlling horiztonal spacing on stacked
+// "sections of the layout"
+
+// Default is $max-width full width container
+// Container wrappers scale to the width of viewport
+%l-container-h__wrapper,
+.l-container-h__wrapper {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: rem($bp-max);
+}
+
+%l-container-h--core {
+  flex-grow: 1;
+  padding-right: $half-gutter;
+  padding-left: $half-gutter;
+}
+
+// Default Container has no gutter
+.l-container {
+  @extend %l-container-h__wrapper;
+}
+
+.l-container-h {
+  @extend %l-container-h--core;
+}
+
+%l-container-h--pull,
+.l-container-h--pull {
+  margin-right: -$half-gutter;
+  margin-left: -$half-gutter;
+}
+
+// Horizontal padding of container
+%l-container-h--sml,
+.l-container-h--sml {
+  @extend %l-container-h--core;
+
+  @include breakpoint($bp-expanded-wrapper) {
+    padding-right: grid-calc(3);
+    padding-left: grid-calc(3)
+  }
+}
+
+%l-container-h--sml-no-gutter,
+.l-container-h--sml-no-gutter {
+  @extend %l-container-h--core;
+
+  @include breakpoint($bp-expanded-wrapper) {
+    padding-right: grid-calc(3, 0);
+    padding-left: grid-calc(3, 0)
+  }
+}
+
+%l-container-h--med,
+.l-container-h--med {
+  @extend %l-container-h--core;
+
+  @include breakpoint($bp-expanded-wrapper) {
+    padding-right: grid-calc(2);
+    padding-left: grid-calc(2);
+  }
+}
+
+%l-container-h--med-no-gutter,
+.l-container-h--med-no-gutter {
+  @extend %l-container-h--core;
+
+  @include breakpoint($bp-expanded-wrapper) {
+    padding-right: grid-calc(2, 0);
+    padding-left: grid-calc(2, 0);
+  }
+}
+
+%l-container-h--lrg,
+.l-container-h--lrg {
+  @extend %l-container-h--core;
+
+  @include breakpoint($bp-expanded-wrapper) {
+    padding-right: grid-calc(1);
+    padding-left: grid-calc(1);
+  }
+}
+
+%l-container-h--lrg-no-gutter,
+.l-container-h--lrg-no-gutter {
+  @extend %l-container-h--core;
+
+  @include breakpoint($bp-expanded-wrapper) {
+    padding-right: grid-calc(1, 0);
+    padding-left: grid-calc(1, 0);
+  }
+}
+
+%l-container-h--xlrg,
+.l-container-h--xlrg {
+  @extend %l-container-h--core;
+  padding-right: $half-gutter;
+  padding-left: $half-gutter;
+}
+
+// %l-container-v,
+// .l-container-v {
+//   @include dbl;
+// }
+
+// Vertical padding of container
+%l-container-v--sml,
+.l-container-v--sml {
+  // @extend %l-container-v;
+  padding-top: ru(1);
+  padding-bottom: ru(1);
+}
+
+%l-container-v--med,
+.l-container-v--med {
+  // @extend %l-container-v;
+  padding-top: ru(1.5);
+  padding-bottom: ru(1.5);
+}
+
+%l-container-v--lrg,
+.l-container-v--lrg {
+  // @extend %l-container-v;
+  padding-top: ru(2);
+  padding-bottom: ru(2);
+}
+
+// Vertical and Horizontal container padding variations
+%l-container--h-sml-v-sml,
+.l-container--h-sml-v-sml {
+  @extend %l-container-h--sml;
+  @extend %l-container-v--sml;
+}
+
+%l-container--h-sml-v-med,
+.l-container--h-sml-v-med {
+  @extend %l-container-h--sml;
+  @extend %l-container-v--med;
+}
+
+%l-container--h-sml-v-lrg,
+.l-container--h-sml-v-lrg {
+  @extend %l-container-h--sml;
+  @extend %l-container-v--lrg;
+}
+
+%l-container--h-med-v-sml,
+.l-container--h-med-v-sml {
+  @extend %l-container-h--med;
+  @extend %l-container-v--sml;
+}
+
+%l-container--h-med-v-med,
+.l-container--h-med-v-med {
+  @extend %l-container-h--med;
+  @extend %l-container-v--med;
+}
+
+%l-container--h-med-v-lrg,
+.l-container--h-med-v-lrg {
+  @extend %l-container-h--med;
+  @extend %l-container-v--lrg;
+}
+
+%l-container--h-lrg-v-sml,
+.l-container--h-lrg-v-sml {
+  @extend %l-container-h--lrg;
+  @extend %l-container-v--sml;
+}
+
+%l-container--h-lrg-v-med,
+.l-container--h-lrg-v-med {
+  @extend %l-container-h--lrg;
+  @extend %l-container-v--med;
+}
+
+%l-container--h-lrg-v-lrg,
+.l-container--h-lrg-v-lrg {
+  @extend %l-container-h--lrg;
+  @extend %l-container-v--lrg;
+}

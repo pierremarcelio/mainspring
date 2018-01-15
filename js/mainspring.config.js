@@ -10,6 +10,11 @@
     // Init accordions.
     $('.m-accordion-item').accordion();
 
+    /**
+     * Flickity
+     */
+    $('[data-carousel=flickity]').flickity();
+
   };
 
   try {

@@ -219,6 +219,30 @@
   text-align: center;
 }
 
+.pl-outline--red {
+  outline: 2px dashed #a00000;
+  background-color: rgba(160, 0, 0, 0.2);
+}
+
+/* Parent Element Highlighed */
+.pl-layout-debug {
+  outline: 2px dashed #a00000;
+  background-color: rgba(160, 0, 0, 0.5);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Child elements are visually higlighted to see
+padding based layouts */
+.pl-layout-debug > * {
+  outline: 2px dashed #00a000;
+  background-color: rgba(0, 160, 0, 0.5);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  color: white;
+}
+
 
 .pl-icon-demo {
   display:  inline-block;
