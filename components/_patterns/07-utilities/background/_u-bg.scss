@@ -1,0 +1,31 @@
+%u-bg--blue,
+.u-bg--blue {
+  background-color: palette(blue);
+  // color: $white;
+
+  // .a-heading__h2,
+  // .a-heading__h3 {
+  //   color: $white;
+  // }
+}
+
+%u-bg--blue-dark,
+.u-bg--blue-dark {
+  background-color: palette(blue, dark);
+  // color: $white;
+}
+
+%u-bg--grey-xlight,
+.u-bg--grey-xlight {
+  background-color: palette(grey, xlight);
+}
+
+%u-bg--grey-xxlight,
+.u-bg--grey-xxlight {
+  background-color: palette(grey, xxlight);
+}
+
+%u-bg--grey-xxxlight,
+.u-bg--grey-xxxlight {
+  background-color: palette(grey, xxxlight);
+}

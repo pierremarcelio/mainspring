@@ -1,0 +1,135 @@
+{% if pl_grid %}
+  <div class="u-grid-debug"></div>
+{% endif %}
+
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+<div class="m-card{{ card_variation }}">
+
+  {% block card_image %}
+
+    {% if card_image %}
+      {# If card has URL wrap in link #}
+      {% if card_url %}
+        <a href="{{ card_url }}" class="m-card{{ card_variation }}__banner is-link" aria-labelledby="{{ card_id }}">
+          {{ card_image }}
+        </a>
+
+      {# Otherwise wrap in DIV #}
+      {% else %}
+        <div class="m-card{{ card_variation }}__banner{{ card_banner_align }}">
+          {{ card_image }}
+        </div>
+      {% endif %}
+    {% endif %}
+
+  {% endblock %}
+
+
+  {% if card_svg %}
+    <div class="m-card{{ card_variation }}__inline-svg">{{ card_svg }}</div>
+  {% endif %}
+
+  {% block card_main %}
+    <div class="m-card{{ card_variation }}__main">
+
+      {% if card_title %}
+        <div class="m-card{{ card_variation }}__title{% if card_svg %}--center{% endif %}">
+          {% include "@atoms/00-type/00-heading.twig"
+            with {
+              heading: {
+                label: card_title.text,
+                level: card_title.level,
+                variation: card_title.variation,
+                url: card_url,
+                id: card_id,
+              },
+              pl_class: '',
+            }
+          %}
+
+          {# Optional Icon for --icon variant #}
+          {% if card_icon %}
+            <div class="m-card--icon__icon">
+             {% include "@atoms/icon/01-icon.twig"
+              with {
+                icon: {
+                  title: card_icon.title,
+                  id: card_icon.id,
+                  variation: '--xmed',
+                },
+                pl_class: '',
+              }
+            %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if card_info %}
+        <div class="m-card{{ card_variation }}__info">
+
+          {# Date and/or author #}
+          {% if card_info.date or card_info.author %}
+            <span class="m-card{{ card_variation }}__date-author">
+          {% endif %}
+
+          {% if card_info.date %} {{ card_info.date }} {% endif %}
+          {% if card_info.date and card_info.author %} | {% endif %}
+          {% if card_info.author %} {{ card_info.author }} {% endif %}
+
+          {% if card_info.date or card_info.author %}
+            </span>
+          {% endif %}
+
+          {# Tags rendered as chips #}
+          {% if card_info.tags %}
+            <span class="m-card{{ card_variation }}__tags">
+              {% for item in card_info.tags %}
+                {{ item.tag }}
+              {% endfor %}
+            </span>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if card_date %}
+        <div class="m-card{{ card_variation }}__date">
+          {% include "@atoms/date/date.twig"
+            with {
+              start_date: card_date.start_date,
+              end_date: card_date.end_date,
+              date_variation: card_date.date_variation,
+            }
+          %}
+        </div>
+      {% endif %}
+
+      {% if card_body %}
+        <div class="m-card{{ card_variation }}__body s-wysiwyg"{% if text_fade %} data-text-fade{% endif %}>{{ card_body }}</div>
+      {% endif %}
+
+      {% if card_button %}
+        <div class="m-card__actions">
+          {% include "@atoms/button/00-button.twig"
+            with {
+              text: card_button.text,
+              variation: card_button.variation,
+              url: card_url,
+              aria_labelledby: card_id,
+              pl_class: '',
+            }
+          %}
+        </div>
+      {% endif %}
+
+    </div>
+  {% endblock %}
+
+</div>
+
+{% if pl_class %}
+  </div>
+{% endif %}

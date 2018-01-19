@@ -1,0 +1,7 @@
+attributes:
+  Attribute():
+    class: ['a-btn']
+    type: submit
+    id: submit_input
+    name: submit_input
+    value: "Subscribe (Input Button)"

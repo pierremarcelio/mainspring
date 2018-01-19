@@ -1,0 +1,9 @@
+base_class: a-btn-icon
+url:
+  "#"
+text:
+  "Right on transparent"
+variation:
+  "--right-on-transparent"
+svg:
+  ico-angle-right

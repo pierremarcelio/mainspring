@@ -1,0 +1,17 @@
+%a-label,
+.a-label {
+  display: block;
+  font-weight: 600;
+}
+
+
+%a-label--is-required,
+.a-label--is-required {
+  @extend %a-label;
+
+  > span {
+    @extend %a-type--small;
+    color: palette(red);
+  }
+}
+

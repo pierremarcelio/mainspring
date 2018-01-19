@@ -1,79 +1,114 @@
-%heading-link {
-  a {
-    $underline-color: $color-secondary;
+// Default heading styles + links in headings
 
+%heading--core {
+  color: palette(blue);
+  font-family: $title-font-family;
+
+  a {
+    @extend %u-animate-all;
     display: inline;
-    background-color: transparent;
-    background-image: linear-gradient(to right, $underline-color 0%, $underline-color 100%);
-    background-repeat: repeat-x;
-    background-position: bottom center; // Default for old safari
-    background-position: bottom 0.12em center; //sass-lint:disable-line no-duplicate-properties
-    background-size: 100% 1px;
+    position: relative;
     color: $color-primary-dark;
-    text-shadow: none;
 
     &:focus,
     &:hover,
     &:active {
-      background-color: transparent;
-      background-size: 100% 2px;
       color: $color-secondary-dark;
+
+      // Animated Icon on hover
+      .a-heading__icon {
+        transform: translate(0.1em, 0.15em);
+      }
     }
   }
 }
 
-%heading-core {
-  @extend %heading-link;
+// Used when title is wrapped in container that's a link
+%heading--link-active {
+  color: $color-secondary-dark;
 
-  color: $color-primary-dark;
-  font-family: $title-font-family;
-  font-weight: $title-font-weight;
-
-  &[data-align='left'] {
-    text-align: left;
-  }
-
-  &[data-align='center'] {
-    text-align: center;
-  }
-
-  &[data-theme='italics'] {
-    font-style: italic;
+  // Animated Icon on hover
+  .a-heading__icon {
+    transform: translate(0.1em, 0.15em);
   }
 }
 
+// Wrap the last work with a span to postion & create padding for icon
+.a-heading__last-word {
+  white-space: nowrap;
+}
+
+// Icon (arrow) when a heading is a link
+.a-heading__icon {
+  @extend %u-animate-all;
+  display: inline;
+  margin-right: 0.5em;
+  width: 0.8em;
+  height: 0.8em;
+  fill: $color-primary-dark;
+  transform: translate(0, 0.15em);
+  transform-style: preserve-3d;
+}
+
+// Unlike most BEM style classes white headings are typically assigned a single class
+// White heading require 2 classes <h2 class="a-heading__h2 a-heading--white">title</h2>
+
+// Uncomment when needed
+// %a-heading--white,
+// .a-heading--white {
+//   color: $white;
+
+//   a {
+//     color: $white;
+
+//     &:focus,
+//     &:hover,
+//     &:active {
+//       color: palette(grey, xxlight);
+//     }
+//   }
+
+//   .a-heading__icon {
+//     fill: $white;
+//   }
+// }
+
 .a-heading__h1,
 %a-heading__h1 {
-  @extend %heading-core;
-  @include font-size($h1-font-sizes);
+  @extend %heading--core;
+  @include font-size($h1-font-sizes, 0, 1);
+  font-weight: 600;
 }
 
 .a-heading__h2,
 %a-heading__h2 {
-  @extend %heading-core;
-  @include font-size($h2-font-sizes);
+  @extend %heading--core;
+  @include font-size($h2-font-sizes, 0, 1);
+  font-weight: 600;
 }
 
 .a-heading__h3,
 %a-heading__h3 {
-  @extend %heading-core;
-  @include font-size($h3-font-sizes);
+  @extend %heading--core;
+  @include font-size($h3-font-sizes, 0, 1);
+  font-weight: 600;
 }
 
 .a-heading__h4,
 %a-heading__h4 {
-  @extend %heading-core;
-  @include font-size($h4-font-sizes);
+  @extend %heading--core;
+  @include font-size($h4-font-sizes, 0, 0.5);
+  font-weight: 600;
 }
 
 .a-heading__h5,
 %a-heading__h5 {
-  @extend %heading-core;
-  @include font-size($h5-font-sizes);
+  @extend %heading--core;
+  @include font-size($h5-font-sizes, 0, 0.5);
+  font-weight: 600;
 }
 
 .a-heading__h6,
 %a-heading__h6 {
-  @extend %heading-core;
-  @include font-size($h6-font-sizes);
+  @extend %a-heading__h5;
 }

@@ -1,2 +1,6 @@
-quote:
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ita separantur, ut disiuncta sint, quo nihil potest esse perversius. An est aliquid, quod te sua spon.
+quote_body: 'There is no logical way to the discovery of these elemental laws. There is only the way of intuition, which is helped by a feeling for the order lying behind the appearance.'
+quote_footer:
+  name: 'Albert Einstien'
+  source: 'Personal Notes (1928)'
+  link: 'https://en.wikipedia.org/wiki/Albert_Einstein'
+pl_class: pl__wrapper--grey-light

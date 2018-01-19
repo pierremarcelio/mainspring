@@ -1,0 +1,4 @@
+label_title: "Default label"
+attributes:
+  Attribute():
+    class: ['a-label']

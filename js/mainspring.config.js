@@ -4,11 +4,29 @@
   // Configuration that should only be ran once globally.
   var init = function () {
 
-    //svg for everybody (Fixes IE svgs)
-    // svg4everybody();
+    /**
+     * Svg4everybody
+     */
+    svg4everybody();
+
+    /**
+     * Dotdotdot
+     */
+    $('[data-dotdotdot="elipsis"]').dotdotdot({
+      watch: "window",
+      lastCharacter : {
+        /*  Remove these characters from the end of the truncated text. */
+        remove    : [ ' ', ',', ';', '.', '!', '?' ],
+      },
+    });
 
     // Init accordions.
     $('.m-accordion-item').accordion();
+
+    /**
+     * Flickity
+     */
+    $('[data-carousel=flickity]').flickity();
 
   };
 

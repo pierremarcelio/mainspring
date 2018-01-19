@@ -1,0 +1,45 @@
+// Sitewide Grid demo
+//
+
+// Singularity Variables
+// https://github.com/Team-Sass/Singularity/wiki/Creating-Grids
+
+//Defines default 12 column grid
+@include add-grid(12);
+@include add-gutter(ru(1));
+@include sgs-change('gutter styles', 'split' 'fixed');
+
+
+// // Must enable debug setting
+@include sgs-change('debug', true);
+
+// Demo class to view grid overlay for debugging
+
+$gutter: ru(1);
+$half-gutter: $gutter / 2;
+
+// Grid function intented to be used in padding for layouts based on flex grid
+// Returns css calc() function with the width of the column added to the gutter
+// Padding - See https://philipwalton.github.io/solved-by-flexbox/demos/grids/
+
+@function grid-calc($cols, $gutter: $gutter, $total-cols: 12) {
+
+  // Check Gutter has no unit, pass to rhyth-unit ru() function
+  @if (unitless($gutter) and $gutter != 0) {
+    $gutter: ru($gutter);
+  }
+
+  // Without gutter return column as percent
+  @if ($cols == null) {
+    @error '$cols value is required';
+  } @elseif ($cols == 0) {
+    @return $gutter/2;
+  } @elseif ($gutter == 0 or $gutter == null) {
+    @return $cols/$total-cols * 100%;
+  } @else {
+    $local-gutter: $gutter/2;
+    @return calc(#{$cols/$total-cols * 100%} + #{$local-gutter});
+  }
+}
+
+

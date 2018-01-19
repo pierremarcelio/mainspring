@@ -1,4 +1,5 @@
 video:
-  "<iframe width='854' height='480' frameborder='0' allowfullscreen='allowfullscreen' src='https://www.youtube.com/embed/mM5_T-F1Yn4?autoplay=0&amp;start=0'></iframe>"
+  "<iframe frameborder='0' allowfullscreen='allowfullscreen' src='https://www.youtube.com/embed/mM5_T-F1Yn4?autoplay=0&amp;start=0'></iframe>"
 variation:
   "--4x3"
+pl_class: pl__wrapper--med

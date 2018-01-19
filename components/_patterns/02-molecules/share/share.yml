@@ -1,0 +1,7 @@
+print_enabled: false
+email_enabled: true
+mailto: 'mailto:?subject=Title&body=Body'
+services:
+  - facebook
+  - twitter
+  - linkedin

@@ -1,0 +1,9 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+<div class="s-wysiwyg{{ wysiwyg.variation }}">
+  {{ wysiwyg.content }}
+</div>
+{% if pl_class %}
+  </div>
+{% endif %}

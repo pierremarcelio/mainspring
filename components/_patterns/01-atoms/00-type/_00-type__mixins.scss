@@ -11,27 +11,30 @@
 /// @group type
 /// @param $fs-map - Defined Range of Font sizes
 /// @param $fs-breakpoints [$breakpoints] -  Specify a specific breakpoint
+/// @param $fs-breakpoints [$breakpoints] -  Specify a specific breakpoint map
+/// @param $fs-leader - # of Rhythm Unit (multiples of the $base-line-height) of optical space above font-box
+/// @param $fs-footer - # of Rhythm Unit (multiples of the $base-line-height) of optical space below font-box
 
 // Requires Global Map like this...
 // $typography-breakpoints: (
 //   type-large: $bp-type-large,
 // );
 
-@mixin font-size($fs-map, $fs-breakpoints: $typography-breakpoints) {
+@mixin font-size($fs-map, $fs-leader: null, $fs-trailer: null, $fs-breakpoints: $typography-breakpoints) {
   @each $fs-breakpoint, $fs-font-size in $fs-map {
     @if $fs-breakpoint == null {
-      @include make-font-size($fs-font-size);
+      @include make-font-size($fs-font-size, $fs-leader, $fs-trailer);
     } @else {
       // If $fs-font-size is a key that exists in
       // $fs-breakpoints, use the value
       @if map-has-key($fs-breakpoints, $fs-breakpoint) {
         $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
-      }@else {
+      } @else {
         @error '#{$fs-breakpoint} is not a valid key in $typography-breakpoints';
       }
 
       @include breakpoint ($fs-breakpoint) {
-        @include make-font-size($fs-font-size);
+        @include make-font-size($fs-font-size, $fs-leader, $fs-trailer);
       }
     }
   }
@@ -41,7 +44,8 @@
 /// @todo Example
 /// @group type
 /// @param $fs-font-size
-@mixin make-font-size($fs-font-size) {
+@mixin make-font-size($fs-font-size, $fs-leader, $fs-trailer) {
+
   // If $fs-font-size is a list, include
   // both font-size and line-height
   @if type-of($fs-font-size) == 'list' {
@@ -59,8 +63,22 @@
       } @else {
         line-height: $lineheight;
       }
+      // Add negative margin by default to remove optical space around css
+      // font box. Allows containers to define space.
+
+      @if ($fs-leader != null) {
+        margin-top: ru($fs-leader, font-margin($fontsize, $lineheight));
+      }
+      @if ($fs-trailer != null) {
+        margin-bottom: ru($fs-trailer, font-margin($fontsize, $lineheight));
+      }
     }
+
   } @else {
     font-size: $fs-font-size;
   }
+}
+
+@function font-margin($fontsize, $lineheight) {
+  @return ($fontsize - $lineheight) / 2;
 }

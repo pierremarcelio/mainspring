@@ -1,34 +1,107 @@
-.m-quote__wrapper {
-  // margin: ru(1) 0 ru(3) 0;
+// Default Quote is large blue block
+
+// Lines appear above and below
+%m-quote--block__decoration {
+  display: block;
+  margin: ru(1) auto;
+  background-color: $white;
+  width: ru(2);
+  height: 1px;
+  content: '';
 }
 
+// Default Blue Quote Block
 %m-quote,
 .m-quote {
-  // @include font-size($h3-font-sizes);
+  @extend %u-remove-child--margin-top-bottom;
+  // @extend %l-container-h--med;
+  padding-top: ru(0.5);
+  padding-bottom: ru(0.5);
   text-align: center;
-  color: $color-secondary-dark;
-  font-weight: 700;
 
-  p {
-    // @include font-size($h3-font-sizes);
+  // Top line
+  &:before {
+    @extend %m-quote--block__decoration;
+  }
+
+  // Top line
+  &:after {
+    @extend %m-quote--block__decoration;
+  }
+
+  // Links will be on blue
+  a {
+    @extend %a-link--a11y;
   }
 }
 
-%m-quote--icon-core {
-  @include svg-centered(ru(3),  ru(3),  ru(3),  ru(3));
-  fill: $color-secondary-xlight;
+.m-quote__body {
+  @extend %a-type--xlarge;
+  position: relative;
+  padding-right: ru(0.5);
+  padding-left: ru(0.5);
+
+  @include breakpoint ($bp-type-large) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  p {
+    @extend %a-type--xlarge;
+  }
 }
 
-.m-quote__open {
-  @extend %m-quote--icon-core;
+%m-quote__mark {
+  @extend %a-type--xlarge;
+  position: absolute;
+  line-height: ru(2);
 }
 
-.m-quote__close {
-  @extend %m-quote--icon-core;
-  margin-left: auto;
+%m-quote__mark-open,
+.m-quote__mark-open {
+  @extend %m-quote__mark;
+  top: ru(-0.5);
+  left: ru(-0.5);
+
+  @include breakpoint ($bp-type-large) {
+    top: ru(-0.25);
+    left: ru(-1.5);
+  }
 }
 
-// %m-quote__cite,
-// .m-quote__cite {
-//   font-style: normal;
-// }
+.m-quote__mark-open--light {
+  @extend %m-quote__mark-open;
+  color: $white;
+}
+
+%m-quote__mark-close,
+.m-quote__mark-close {
+  @extend %m-quote__mark;
+  right: ru(-0.5);
+  bottom: ru(-1.5);
+
+  @include breakpoint ($bp-type-large) {
+    right: ru(-1.5);
+  }
+}
+
+.m-quote__mark-close--light {
+  @extend %m-quote__mark-close;
+  color: $white;
+}
+
+
+%m-quote__footer,
+.m-quote__footer {
+  @extend %a-type__core;
+  margin-top: ru(1);
+  font-style: normal;
+
+
+}
+
+.m-quote__footer--light {
+  @extend %m-quote__footer;
+  color: $white;
+
+}

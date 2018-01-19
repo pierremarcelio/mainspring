@@ -1,0 +1,32 @@
+// Default link on white
+%a-link--a11y-core {
+  @extend %a-link--core;
+  background-repeat: repeat-x;
+  background-position: bottom center; // Default for old safari
+  background-position: bottom 0.06em center; //sass-lint:disable-line no-duplicate-properties
+  background-size: 100% 1px;
+  text-decoration: none;
+}
+
+
+// Default link is blue on white
+%a-link--a11y,
+.a-link--a11y {
+  @extend %a-link--a11y-core;
+  @include accessible-link(
+    $text-background-color: $white,
+    $underline-color: palette(blue, xlight),
+    $text-background-color-hover: palette(grey, xxxlight));
+  color: palette(blue);
+}
+
+// Uncomment to use color variations
+// %a-link--a11y-white-on-blue,
+// .a-link--a11y-white-on-blue {
+//   @extend %a-link--white;
+//   @extend %a-link--a11y-core;
+//   @include accessible-link(
+//     $text-background-color: palette(blue),
+//     $underline-color: palette(blue, xlight),
+//     $text-background-color-hover: palette(blue, dark));
+// }

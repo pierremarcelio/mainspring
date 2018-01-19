@@ -1,9 +1,39 @@
-<div class="m-quote__wrapper">
-  <div class="m-quote__open"><svg class="svg__core"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#quote-left"></use></svg></div>
-    <blockquote class="m-quote">
-      <p>
-       {{ quote }}
-     </p>
-    </blockquote>
-  <div class="m-quote__close"><svg class="svg__core"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/svg/sprite-ui.svg#quote-right"></use></svg></div>
-</div>
+{% set quote_variation = quote_variation|default('--block') %}
+
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+<blockquote class="m-quote">
+  <div class="m-quote__body">
+    <div class="m-quote__mark-open--light">&ldquo;</div>
+    <div class="s-wysiwyg--bg-blue">{{ quote_body }}</div>
+    <div class="m-quote__mark-close--light">&rdquo;</div>
+  </div>
+
+  {% if quote_footer.name or quote_footer.source %}
+    <cite class="m-quote__footer--light">
+    {% if quote_footer.name %}
+      {{ quote_footer.name }}
+    {% endif %}
+
+    {% if quote_footer.name and quote_footer.source %}
+      &ndash;
+    {% endif %}
+
+    {% if quote_footer.source %}
+      {# Source of quote is a link #}
+      {% if quote_footer.link %}
+        <a href="{{quote_footer.link}}" target="_blank">{{ quote_footer.source }}</a>
+      {# Source of quote is text #}
+      {% else %}
+        {{ quote_footer.source }}
+      {% endif %}
+    {% endif %}
+    </cite>
+  {% endif %}
+</blockquote>
+
+{% if pl_class %}
+  </div>
+{% endif %}

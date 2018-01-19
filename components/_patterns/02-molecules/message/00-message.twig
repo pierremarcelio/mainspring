@@ -1,0 +1,25 @@
+{% if sg_wrapper %}
+  <div class="sg__wrapper--no-pad">
+{% endif %}
+
+<div class="m-message{{ infobox_variation }}">
+  <div class="m-message__wrapper">
+    {% if infobox_title %}
+      <div class="m-message__title">
+        {% block infobox_title %}
+          {{ infobox_title }}
+        {% endblock %}
+      </div>
+    {% endif %}
+
+    <div class="m-message__text">
+      {% block infobox_text %}
+        {{ infobox_text }}
+      {% endblock %}
+    </div>
+  </div>
+</div>
+
+{% if sg_wrapper %}
+  </div>
+{% endif %}

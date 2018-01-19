@@ -1,0 +1,38 @@
+.m-share {
+  @extend %u-clearfix;
+  @extend %u-remove-child--margin-top-bottom;
+  display: flex;
+  align-items: center;
+  margin-bottom: ru(1);
+
+  @include breakpoint($bp-type-large) {
+    margin-bottom: 0;
+  }
+}
+
+.m-share__text {
+  @extend %a-type--large;
+  align-items: center;
+  float: left;
+  margin-right: ru(0.25);
+  margin-bottom: 0;
+}
+
+.m-share__icons-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.m-share__icon {
+  @extend %u-animate-all;
+  padding: ru(0.25);
+  color: palette(blue);
+
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: palette(grey, xxxlight);
+    color: palette(blue, dark);
+  }
+}

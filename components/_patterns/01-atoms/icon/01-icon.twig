@@ -1,0 +1,27 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+{# Default SVG sprite is sprite-ui #}
+{% set sprite = icon.sprite|default('sprite-ui') %}
+
+{% spaceless %}
+<span class="a-icon{{ icon.variation }}">
+  <svg class="a-icon__svg"
+    {# if there is not a Title for SVG assume it's visually meaningless and apply aria-hidden #}
+    {% if icon.title is empty %}
+      aria-hidden="true"
+    {% endif %}>
+
+    {% if icon.title %}
+      <title>{{ icon.title|t }}</title>
+    {% endif %}
+
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory}}/assets/svg/{{ sprite }}.svg#{{ icon.id }}"></use>
+  </svg>
+</span>
+{% endspaceless %}
+
+{% if pl_class %}
+  </div>
+{% endif %}

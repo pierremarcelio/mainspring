@@ -1,0 +1,6 @@
+icon:
+  title: Report Document
+  id: ico-calendar
+  sprite: sprite-ui
+  variation: --xlrg
+pl_class: pl-icon-demo

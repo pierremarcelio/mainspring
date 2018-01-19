@@ -3,8 +3,8 @@
   display: inline-block;
   border-width: 1px;
   border-style: solid;
-  border-color: none;
-  border-radius: rem(4px);
+  border-color: transparent;
+  border-radius: rem(2px);
   cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
@@ -53,6 +53,22 @@
   color: $color-secondary;
 }
 
+// Style Variations
+// Button that looks like text link
+%a-btn--link,
+.a-btn--link {
+  margin: 0 0 ru(0.25) 0;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  text-transform: uppercase;
+  color: $white;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 // Button Variations
 %a-btn,
 .a-btn {
@@ -62,6 +78,7 @@
 
 }
 
+%a-btn--secondary,
 .a-btn--secondary {
   @extend %a-btn--core;
   @extend %a-btn--default-padding;

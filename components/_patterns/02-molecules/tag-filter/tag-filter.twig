@@ -1,0 +1,30 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+<div class="m-tag-filter" data-views-tag-filter data-views-tag-filter-id="{{ filter_id }}" data-views-tag-filter-controls="{{ form_id }}">
+  <h2 class="m-tag-filter__label">{{ 'Applied Filters'|t }}:</h2>
+
+  {% if tags %}
+    <ul class="m-tag-filter__menu">
+      {% for tag in tags %}
+        <li class="m-tag-filter__item" data-views-tag-filter-component="parent-tag">
+          {% include "@atoms/chip/01-chip.twig" 
+            with {
+              chip: {
+                variation: 'filter',
+                text: tag.name,
+                attributes: tag.attributes
+              }
+            }
+          %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+</div>
+
+{% if pl_class %}
+  </div>
+{% endif %}

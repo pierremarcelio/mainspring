@@ -1,0 +1,32 @@
+%a-input,
+.a-input {
+  border-color: palette(grey, light);
+  padding: ru(0.5);
+  -webkit-appearance: none;
+
+  &.is-invalid {
+    border-color: palette(red);
+    color: palette(red);
+  }
+}
+
+%a-input--is-required,
+.a-input--is-required {
+  @extend %a-input;
+}
+
+%a-input-submit--text,
+.a-input-submit--text {
+  @extend %a-link;
+  @extend %a-type--large;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  white-space: normal;
+  -webkit-appearance: none;
+}
+
+.a-input-submit {
+  margin: ru(1) 0;
+  width: 100%;
+}

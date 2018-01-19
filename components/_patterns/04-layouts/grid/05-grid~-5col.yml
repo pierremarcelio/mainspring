@@ -1,0 +1,35 @@
+pl_class: 'pl-outline--red'
+grid_variation: '--5col'
+grid_wrapper_variation: ''
+rows:
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+            with:
+              pl_class: ''
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+            with:
+              pl_class: ''
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+            with:
+              pl_class: ''
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+            with:
+              pl_class: ''
+  - content:
+      join():
+        - include():
+            pattern: molecules-card
+            with:
+              pl_class: ''
+

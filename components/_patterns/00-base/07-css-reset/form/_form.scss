@@ -1,0 +1,86 @@
+/* Form Elements Reset
+--------------------------------------------- */
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0; /* 2 */
+  font: inherit; /* 1 */
+  // -webkit-appearance: none;
+}
+
+input[type='color'],
+input[type='date'],
+input[type='datetime'],
+input[type='datetime-local'],
+input[type='email'],
+input[type='month'],
+input[type='number'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='time'],
+input[type='url'],
+input[type='week'],
+select,
+textarea {
+  @extend %u-animate-all;
+  border-width: 1px;
+  border-style: solid;
+  border-color: palette(grey, xxxlight);
+  border-radius: 2px;
+  background-color: palette(grey, xxxlight);
+  padding: ru(0.5);
+  width: 100%;
+  line-height: ru(1);
+  color: $black;
+}
+
+/* Focus Overrides - -https://www.tjvantoll.com/2013/01/28/stop-messing-with-the-browsers-default-focus-outline/ */
+input[type='color']:focus,
+input[type='date']:focus,
+input[type='datetime']:focus,
+input[type='datetime-local']:focus,
+input[type='email']:focus,
+input[type='month']:focus,
+input[type='number']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+input[type='tel']:focus,
+input[type='text']:focus,
+input[type='time']:focus,
+input[type='url']:focus,
+input[type='week']:focus,
+textarea:focus,
+select:focus {
+  border-color: palette(blue, xlight);
+  background-color: $white;
+}
+
+
+input[type='checkbox'],
+input[type='image'],
+input[type='radio'] {
+  width: auto;
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: palette(grey);
+}
+
+
+// Checkboxes & Radios
+input[type='checkbox'],
+input[type='radio'] {
+  // opacity: 0;
+  margin: 0;
+  padding: 0;
+}
+
+input[type='checkbox'] {
+  position: absolute; // So the space of the input is removed.
+}

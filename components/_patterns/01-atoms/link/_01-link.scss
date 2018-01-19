@@ -1,0 +1,36 @@
+%a-link--core {
+  @extend %u-animate-all;
+  display: inline;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+%a-link,
+.a-link {
+  @extend %a-link--core;
+  color: palette(blue);
+
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba(palette(grey, light), 0.2);
+    color: palette(blue, dark);
+  }
+}
+
+%a-link--white,
+.a-link--white {
+  @extend %a-link--core;
+  text-decoration: underline;
+  color: $white;
+
+  &:visited,
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba(palette(blue, dark), 0.4);
+    color: $white;
+  }
+}
+

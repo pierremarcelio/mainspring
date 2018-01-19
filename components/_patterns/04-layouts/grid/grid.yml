@@ -1,10 +1,24 @@
+pl_class: 'pl__wrapper--sml-no-padding pl-outline--red'
+grid_variation: ''
+grid_outer_gutter: ''
 rows:
   - content:
       join():
         - include():
             pattern: molecules-card
+            with:
+              pl_class: ''
   - content:
       join():
         - include():
             pattern: molecules-card
-
+            with:
+              card_title: 'This card has a very long title and description'
+              card_url: '#'
+              card_text: 'Vestibulum id ligula porta felis euismod semper. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.'
+              card_id: 'card-nid-2'
+              card_actions: true
+              button_text: 'Learn more'
+              button_url: '#'
+              button_variation: '--secondary'
+              pl_class: ''

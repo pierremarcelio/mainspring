@@ -1,0 +1,16 @@
+filter_id: 'view--display'
+form_id: 'view-exposed-form'
+tags:
+  -
+    variation: 'filter'
+    name: 'tag 1'
+  -
+    variation: 'filter'
+    name: 'tag 2'
+  -
+    variation: 'filter'
+    name: 'tag 3'
+  -
+    variation: 'filter'
+    name: 'tag 4'
+pl_class: 'pl__wrapper--lrg'

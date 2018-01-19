@@ -1,0 +1,13 @@
+attributes:
+  Attribute():
+    class: ['a-input']
+    type: text
+    id: textfield_input
+    name: textfield_input
+    value: ""
+    size: 60
+    maxlength: 128
+    placeholder: Placeholder for textfield
+    required: required
+    aria-required: true
+pl_class: pl__wrapper--med

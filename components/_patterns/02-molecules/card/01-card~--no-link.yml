@@ -1,0 +1,12 @@
+card_variation: ''
+card_title:
+  text: 'No link card'
+  level: 3
+  variation: 2
+card_info: ''
+card_body: "Avoid cards without links in them as they're not a good User Experience"
+card_url: ''
+card_id: 'card-nid-1'
+card_image: "<img src='https://placeholdit.imgix.net/~text?txtsize=40&txt=382%C3%97210&w=382&h=210'/>"
+card_button: ''
+pl_class: 'pl__wrapper--sml'

@@ -1,0 +1,211 @@
+svg {
+  // Overrides presentation attributes in SVG file to
+  // Allow these values to inherit from CSS file.
+  // path,
+  // line,
+  // circle {
+  //   fill: inherit;
+  //   stroke: inherit;
+  //   stroke-width: inherit;
+  // }
+
+  // Fix for Edge not bubbling up events on clicking the use in an svg.
+  // https://connect.microsoft.com/IE/feedback/details/796745/mouse-events-are-not-delivered-at-all-anymore-when-inside-an-svg-a-use-is-removed-from-the-dom
+  use {
+    pointer-events: none;
+  }
+}
+
+
+// Sets SVG to use "css color" as the fill in the SVG
+%a-svg--fill,
+.a-svg--fill {
+  fill: currentColor;
+}
+
+
+// Sets SVG to use "css color" as the stroke in the SVG
+.a-svg--stroke {
+  stroke: currentColor;
+}
+
+
+// Scale in proportion, fluid width SVGs
+// Allowing fully fluid SVG's
+// Based on http://tympanus.net/codrops/2014/08/19/making-svgs-responsive-with-css/
+%a-svg__wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+}
+
+
+// Extend the Actual SVG with placeholder
+%a-svg__core,
+.a-svg__core {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Inline svg added via media entity svg type.
+%a-svg-inline__core,
+.a-svg-inline__core {
+  @extend %a-svg--fill;
+  width: 100%;
+  height: 100%;
+}
+
+
+// // SVG Centered as icons using @mixing svg-centered
+// .a-svg-centered {
+//   @include svg-centered(ru(2),  ru(2),  ru(3),  ru(2));
+
+//   display: inline-block;
+//   fill: palette(blue, dark);
+
+//   &:visited {
+//     color: palette(blue, dark);
+//   }
+
+//   &:hover,
+//   &:active {
+//     color: palette(blue, light);
+//   }
+
+//   &:focus {
+//     outline: 1px dashed palette(grey, light);
+//   }
+// }
+
+
+// Inline SVG
+// Need to offset for 2px border
+// $button-vertical-padding: ru(0.5) - rem(2px);
+
+.a-svg-inline-left {
+  // See /01-atoms/01-svg/_svg__mixins.scss
+  @include svg-inline(
+    $baseline: rem($base-line-height), // font baseline
+    $svg-width: ru(0.75), // SVG width (units same as typography)
+    $svg-height: ru(0.75), // SVG height
+    $svg-pad-right: ru(0.25), // padding on right side of SVG
+    $svg-pad-left: 0, // padding on left side of SVG
+    $container-vertical-padding: ru(0.25), // Top & bottom padding for container
+    $container-padding-left: ru(1), // Left padding for container
+    $container-padding-right: ru(1), // Right padding for container    $svg-class: 'svg', // Class for the SVG inside the parent
+    $h-alignment: 'left', // Align Icon on 'left' or 'right'
+    $v-alignment: 'middle'); // Align Icon 'middle' or 'top'
+}
+
+.a-svg-inline-right {
+  // See /01-atoms/01-svg/_svg__mixins.scss
+  @include svg-inline(
+    $baseline: rem($base-line-height), // font baseline
+    $svg-width: ru(0.75), // SVG width (units same as typography)
+    $svg-height: ru(0.75), // SVG height
+    $svg-pad-right: 0, // padding on left side of SVG
+    $svg-pad-left: ru(0.5), // padding on right side of SVG
+    $container-vertical-padding: ru(0.25), // Top & bottom padding for container
+    $container-padding-left: ru(1), // Left padding for container
+    $container-padding-right: ru(0.5), // Right padding for container
+    $h-alignment: 'right', // Align Icon on 'left' or 'right'
+    $v-alignment: 'middle'); // Align Icon 'middle' or 'top'
+}
+
+
+
+// SVG - Inline Style
+// Inline Block SVG icons with EM based sizing.
+// Fill Color inherits from parent element
+%a-svg--inline-core {
+  @extend %a-svg__wrapper;
+  display: inline-block;
+  // Render art on partial pixels
+  transform-style: preserve-3d;
+}
+
+
+// Default size is "Larger" Icons relative to text
+%a-svg--inline-left__wrapper,
+.a-svg--inline-left__wrapper {
+  @extend %a-svg--inline-core;
+
+  // icons are 0.75% of baseline height in em
+  margin-right: ru(0.5);
+  width: 1em;
+  height: 1em;
+  // Centers visually in middle of type's height
+  transform: translateY(15%);
+  // transform: scale(1.1);
+  // Centers visually in middle of type's height
+}
+
+// Default size is "Larger" Icons relative to text
+%a-svg--inline-right__wrapper,
+.a-svg--inline-right__wrapper {
+  @extend %a-svg--inline-core;
+
+  // icons are 0.75% of baseline height in em
+  margin-left: ru(0.5);
+  width: 1em;
+  height: 1em;
+  // Centers visually in middle of type's height
+  transform: translateY(15%);
+  // transform: scale(1.1);
+  // Centers visually in middle of type's height
+}
+
+%a-svg--inline-large__wrapper,
+.a-svg--inline-large__wrapper {
+  @extend %a-svg--inline-core;
+
+  display: inline-block;
+  // icons are 100% of baseline height in em
+  width: em($base-line-height) * 1;
+  height: em($base-line-height) * 1;
+  // Controls the size of the svg icon
+  font-size: 1em;
+  // Centers visually in middle of type's height
+  transform: translateY(20%);
+}
+
+%a-svg--inline-xlarge__wrapper,
+.a-svg--inline-xlarge__wrapper {
+  @extend %a-svg--inline-core;
+
+  display: inline-block;
+  // icons are 0.75% of baseline height in em
+  width: em($base-line-height) * 1.25;
+  height: em($base-line-height) * 1.25;
+  // Controls the size of the svg icon
+  font-size: 1.5em;
+  // Centers visually in middle of type's height
+  transform: translateY(25%);
+}
+
+%a-svg--inline,
+.a-svg--inline {
+  @extend %a-svg--fill;
+  @extend %a-svg__core;
+}
+
+//Mobile Menu Icon
+%a-svg-mobile-menu,
+.a-svg-mobile-menu {
+  @include svg-centered(ru(1.25),  ru(1.25),  ru(1.25),  ru(1.25));
+  fill: $white;
+  transform: translate(0, -50%);
+
+  &:focus {
+    outline: 1px dashed palette(grey, xlight);
+  }
+
+  @include breakpoint($bp-expanded-wrapper) {
+    @include svg-centered(ru(1.5),  ru(1.5),  ru(1.5),  ru(1.5));
+  }
+}
+
+

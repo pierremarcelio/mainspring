@@ -1,4 +1,3 @@
-url:
-  '#'
-title:
-  'Lorem ipsum dolor sit amet, consectetur adipiscing elit Lorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elitLorem ipsum dolor sit amet, consectetur adipiscing elit'
+url: '#'
+title: 'letterWrapExample@reallyReallyLongDomainName.com'
+pl_class: 'pl__wrapper--sml'

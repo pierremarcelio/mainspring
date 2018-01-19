@@ -1,0 +1,17 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+{% if wrapper_attributes %}
+  <div{{ wrapper_attributes }}>
+{% endif %}
+
+<textarea {{ attributes }}>{{ value }}</textarea>
+
+{% if wrapper_attributes %}
+  </div>
+{% endif %}
+
+{% if pl_class %}
+  </div>
+{% endif %}

@@ -8,8 +8,14 @@ items:
       href: "#"
     4:
       href: "#"
+    5:
+      href: "#"
+    6:
+      href: "#"
   previous: true
+  first: true
   next: true
+  last: true
 
 ellipses:
   next: true

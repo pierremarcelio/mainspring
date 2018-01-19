@@ -1,0 +1,9 @@
+attributes:
+  Attribute():
+    class: ['a-textarea']
+    placeholder: Placeholder for textfield jyjy
+    id: textarea_input
+    value: ""
+    rows: 10
+    required: required
+    aria-required: true
