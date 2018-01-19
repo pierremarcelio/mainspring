@@ -36,9 +36,9 @@ textarea {
   width: 100%;
   line-height: ru(1);
   color: $black;
-  box-shadow: none;
 }
 
+/* Focus Overrides - -https://www.tjvantoll.com/2013/01/28/stop-messing-with-the-browsers-default-focus-outline/ */
 input[type='color']:focus,
 input[type='date']:focus,
 input[type='datetime']:focus,
@@ -55,10 +55,8 @@ input[type='url']:focus,
 input[type='week']:focus,
 textarea:focus,
 select:focus {
-  outline: 0;
   border-color: palette(blue, xlight);
   background-color: $white;
-  box-shadow: none;
 }
 
 

@@ -10,6 +10,8 @@
   {% set level = level == 'h0' ? 'div' : level %}
   {% set variation = '__h' ~ (heading.variation|default(heading.level|default('2'))) %}
 
+  {% set icon_name = icon_name|default('ico-angle-right') %}
+
   {# heading id used for aria roles or anchor links. not rendered by default and  #}
   {% spaceless %}
   <{{ level }}
@@ -48,7 +50,7 @@
 
     <span class="a-heading__last-word">{{ label_last_word|raw }}{% endautoescape %}
       <svg class="a-heading__icon">
-        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#ico-angle-right">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#{{icon_name}}">
         </use>
       </svg>
     </span>

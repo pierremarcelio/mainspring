@@ -91,21 +91,21 @@
 %a-heading__h3 {
   @extend %heading--core;
   @include font-size($h3-font-sizes, 0, 1);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .a-heading__h4,
 %a-heading__h4 {
   @extend %heading--core;
   @include font-size($h4-font-sizes, 0, 0.5);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .a-heading__h5,
 %a-heading__h5 {
   @extend %heading--core;
   @include font-size($h5-font-sizes, 0, 0.5);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .a-heading__h6,

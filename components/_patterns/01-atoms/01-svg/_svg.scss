@@ -86,8 +86,7 @@ svg {
 // $button-vertical-padding: ru(0.5) - rem(2px);
 
 .a-svg-inline-left {
-  // @extend %c-btn--icon-core;
-  // See /global/g-svg/_g-svg--mixins.scss
+  // See /01-atoms/01-svg/_svg__mixins.scss
   @include svg-inline(
     $baseline: rem($base-line-height), // font baseline
     $svg-width: ru(0.75), // SVG width (units same as typography)
@@ -102,8 +101,7 @@ svg {
 }
 
 .a-svg-inline-right {
-  // @extend %c-btn--icon-core;
-  // See /global/g-svg/_g-svg--mixins.scss
+  // See /01-atoms/01-svg/_svg__mixins.scss
   @include svg-inline(
     $baseline: rem($base-line-height), // font baseline
     $svg-width: ru(0.75), // SVG width (units same as typography)
