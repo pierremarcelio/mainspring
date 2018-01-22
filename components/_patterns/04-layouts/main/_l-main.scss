@@ -18,11 +18,11 @@
   padding: ru(1);
   min-height: ru(10);
 
-  @include respond-to('full-nav') {
-    float: left;
-    width: 75%;
-    min-height: 50vh;
-  }
+  // @include respond-to('full-nav') {
+  //   float: left;
+  //   width: 75%;
+  //   min-height: 50vh;
+  // }
 }
 
 .l-main__aside {
@@ -30,9 +30,9 @@
   padding: ru(1);
   min-height: ru(5);
 
-  @include respond-to('full-nav') {
-    float: right;
-    width: 25%;
-    min-height: 50vh;
-  }
+  // @include respond-to('full-nav') {
+  //   float: right;
+  //   width: 25%;
+  //   min-height: 50vh;
+  // }
 }

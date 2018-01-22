@@ -6,18 +6,18 @@
 
 .o-header__logo {
 
-  @include respond-to('full-nav') {
-    float: left;
-    padding-right: ru(0.5);
-    width: 50%;
-  }
+  // @include respond-to('full-nav') {
+  //   float: left;
+  //   padding-right: ru(0.5);
+  //   width: 50%;
+  // }
 }
 
 .o-header__menu-main {
 
-  @include respond-to('full-nav') {
-    float: right;
-    padding-left: ru(0.5);
-    width: 50%;
-  }
+  // @include respond-to('full-nav') {
+  //   float: right;
+  //   padding-left: ru(0.5);
+  //   width: 50%;
+  // }
 }

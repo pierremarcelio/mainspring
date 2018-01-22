@@ -24,7 +24,7 @@ description:
 children:
   join():
     - include():
-        pattern: atoms-input  #include input atom with default values (textfield is default)
+        pattern: base-input  #include input atom with default values (textfield is default)
           pl_class: ''
 #suffix: "PL suffix" #Optional
 gentle_form:
