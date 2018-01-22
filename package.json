@@ -66,6 +66,6 @@
   "scripts": {
     "start": "gulp",
     "init": "npm i -g yarn gulp && yarn install && echo \"module.exports = { };\" > local.gulp-config.js && npm run refreshPL && gulp build",
-    "refreshPL": "rm -rf pattern-lab && composer create-project -n drupal-pattern-lab/edition-twig-standard pattern-lab && rm -rf pattern-lab/source && ln -s ../components pattern-lab/source && composer require -d ./pattern-lab aleksip/plugin-data-transform && gulp pl:config"
+    "refreshPL": "rm -rf pattern-lab && composer create-project -n pattern-lab/edition-twig-standard pattern-lab && sed -i '.bak' 's/public\\/\\*//' pattern-lab/.gitignore && rm -rf pattern-lab/source && ln -s ../components pattern-lab/source && composer require -d ./pattern-lab aleksip/plugin-data-transform && gulp pl:config"
   }
 }
