@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a branding block.
+ *
+ * Each branding element variable (logo, name, slogan) is only available if
+ * enabled in the block configuration.
+ *
+ * Available variables:
+ * - site_logo: Logo for site as defined in Appearance or theme settings.
+ * - site_name: Name for site as defined in Site information settings.
+ * - site_slogan: Slogan for site as defined in Site information settings.
+ *
+ * @ingroup themeable
+ */
+#}
+{% if sg_wrapper %}
+  <div class="{{ sg_wrapper }}">
+{% endif %}
+
+<div class="m-logo">
+  <div class="m-logo__svg-wrapper">
+    <a class="m-logo__link" href="{{ url }}">
+      <svg class="m-logo__svg"><use xlink:href="{{ base_path ~ directory }}/assets/svg/svg-art.svg#mainspring-logo"></use></svg>
+      <div class="m-logo__hidden-text">{{ 'Home'|t }}</div>
+    </a>
+  </div>
+</div>
+
+{% if sg_wrapper %}
+  </div>
+{% endif %}

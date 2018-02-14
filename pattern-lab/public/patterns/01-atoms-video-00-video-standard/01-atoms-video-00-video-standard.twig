@@ -1,0 +1,11 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+<div class="a-video{{ variation }}">
+  {{ video|raw }}
+</div>
+
+{% if pl_class %}
+  </div>
+{% endif %}

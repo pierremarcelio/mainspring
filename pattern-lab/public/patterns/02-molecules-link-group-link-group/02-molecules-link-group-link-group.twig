@@ -1,0 +1,29 @@
+{% if pl_class %}
+<div class="{{ pl_class }}">
+{% endif %}
+
+<div class="m-link-group">
+  {% if group_title %}
+    <div class="m-link-group__title">
+      <h3>{{ group_title }}</h3>
+    </div>
+  {% endif %}
+
+  {% for link in links %}
+    <div class="m-link-group__item">
+      {% include "@atoms/link/01-link.twig"
+        with {
+          title: link.title,
+          url: link.url,
+          svg: link.svg,
+          link_variation: link.variation,
+          pl_class: '',
+        }
+      %}
+    </div>
+  {% endfor %}
+</div>
+
+{% if pl_class %}
+</div>
+{% endif %}

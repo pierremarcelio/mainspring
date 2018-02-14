@@ -1,0 +1,21 @@
+{% set list_type = list_type|default('ul') %}
+
+{% if list_type == 'ul' %}
+  {% set list_variation = '--unordered' %}
+{% else %}
+  {% set list_variation = '--ordered' %}
+{% endif %}
+
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+<{{ list_type }} class="a-list{{ list_variation }}{{ list_theme }}">
+  {% for list_item in list_items %}
+    <li class="a-list__item">{{ list_item.content }}</li>
+  {% endfor %}
+</{{ list_type }}>
+
+{% if pl_class %}
+  </div>
+{% endif %}

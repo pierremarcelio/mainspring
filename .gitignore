@@ -1,13 +1,3 @@
-# Ignore compiled files.
-
-# Pattern Lab
-pattern-lab
-
-local.gulp-config.js
-
-# We're not worried that PL runs exactly the same version on each local machine / CI build
-composer.lock
-
 # NPM
 node_modules
 npm-debug.log
@@ -17,3 +7,6 @@ npm-debug.log
 .DS_Store*
 ehthumbs.db
 !Icon
+
+# PhpStorm file
+.idea

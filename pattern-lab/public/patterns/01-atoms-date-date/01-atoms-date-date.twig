@@ -1,0 +1,35 @@
+{# Get the day of the start date #}
+{% set start_day   = start_date|date('d') %}
+{% set start_month = start_date|date('F') %}
+{% set start_year  = start_date|date('Y') %}
+
+{# Get the day of the end date #}
+{% set end_day   = end_date|date('d') %}
+{% set end_month = end_date|date('F') %}
+{% set end_year  = end_date|date('Y') %}
+
+<span class="a-date{{ date_variation }}">
+  {% if start_day == end_day and start_month == end_month and start_year == end_year %}
+    <span class="a-date__start">
+      {{ start_month }} {{ start_day }}, {{ start_year }}
+    </span>
+  {% endif %}
+
+  {% if start_year == end_year and start_month == end_month and start_day != end_day %}
+    <span class="a-date__end">
+      {{ start_month }} {{ start_day }}-{{ end_day }}, {{ start_year }}
+    </span>
+  {% endif %}
+
+  {% if start_year == end_year and start_month != end_month %}
+    <span class="a-date__end">
+      {{ start_month }} {{ start_day }} - {{ end_month }} {{ end_day }}, {{ start_year }}
+    </span>
+  {% endif %}
+
+  {% if start_year != end_year %}
+    <span class="a-date__end">
+      {{ start_month }} {{ start_day }}, {{ start_year }} - {{ end_month }} {{ end_day }}, {{ end_year }}
+    </span>
+  {% endif %}
+</span>

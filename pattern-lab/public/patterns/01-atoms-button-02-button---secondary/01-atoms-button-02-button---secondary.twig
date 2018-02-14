@@ -1,0 +1,53 @@
+{#
+aria-labelledby used if button is a "read more" link or other ambiguous label. Requires unique ID from text element on same page.
+#}
+
+{% set btn_element = btn_element|default('a') %}
+
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+{% spaceless %}
+
+{# <a> or <button> #}
+<{{ btn_element }}
+  {# href for <a> #}
+  {% if url %}
+    href="{{ url }}"
+  {% endif %}
+
+  {# Class #}
+  {% set base_class = base_class|default('a-btn') %}
+  class="{{ base_class }}{{ variation }} {{ extra_classes }}"
+
+  {% if data_attribute %}
+    {{ data_attribute|raw }}
+  {% endif %}
+
+  {# Optional Arial Lable by for amigious links like "read more" #}
+  {% if aria_labelledby %}
+    aria-labelledby="{{ aria_labelledby }}"
+  {% endif %}>
+    <span class="text">{{ text }}</span>
+
+  {# Counter on button #}
+  {% if counter %}
+    &nbsp;<span>{{ counter }}</span>
+  {% endif %}
+
+  {# Optional SVG icon suffix #}
+  {% if svg %}
+    <svg class="a-svg">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="{{ base_path ~ directory }}/assets/svg/sprite-ui.svg#{{ svg }}">
+      </use>
+    </svg>
+  {% endif %}
+
+</{{ btn_element }}>
+
+{% endspaceless %}
+
+{% if pl_class %}
+  </div>
+{% endif %}

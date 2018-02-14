@@ -1,0 +1,19 @@
+{% if pl %}
+  {% include '@utilities/grid-debug/grid-debug.twig' %}
+{% endif %}
+
+{% if container_wrapper %}
+  <div class="{{ container_wrapper }}">
+{% endif %}
+
+<div class="l-container-h__wrapper {{ container_vertical }}">
+  <div class="l-container-h--{{ container_variation }}{% if pl %} pl-layout-debug{% endif %}">
+    {% block content %}
+      {{ container_content }}
+    {% endblock %}
+  </div>
+</div>
+
+{% if container_wrapper %}
+  </div>
+{% endif %}

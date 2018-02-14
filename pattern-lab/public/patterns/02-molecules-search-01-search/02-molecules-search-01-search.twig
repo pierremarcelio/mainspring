@@ -1,0 +1,26 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+{% if search_form %}
+  <div{{ attributes }}>
+    {% block content %}
+      {{ search_form }}
+    {% endblock %}
+  </div>
+
+{% else %}
+  <div class="m-search{{ search_variation }}">
+    <div class="m-search__textbox">
+      <label>Title</label>
+      <input type="text" name="title" value="" size="30" maxlength="128" placeholder="Search Site">
+    </div>
+    <div class="m-search__btn">
+      <input type="submit" value="Apply">
+    </div>
+  </div>
+{% endif %}
+
+{% if pl_class %}
+  </div>
+{% endif %}

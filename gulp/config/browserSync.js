@@ -16,7 +16,7 @@ global.config.browserSync = {
   domain: localUrl,
   defaults: {
     startPath: 'pattern-lab/public/',
-    open: true,
+    open: false,
     browser: "google chrome",
     reloadDelay: 50,
     reloadDebounce: 750,

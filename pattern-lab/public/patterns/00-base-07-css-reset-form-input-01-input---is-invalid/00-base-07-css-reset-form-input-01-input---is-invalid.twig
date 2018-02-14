@@ -1,0 +1,9 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+<input {{ attributes }} />{{ children }}
+
+{% if pl_class %}
+  </div>
+{% endif %}

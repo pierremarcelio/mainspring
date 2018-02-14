@@ -1,0 +1,15 @@
+{% if pl_class %}
+  <div class="{{ pl_class }}">
+{% endif %}
+
+<div class="l-grid{{ grid_variation }}{% if grid_wrapper_variation %} l-grid__wrapper{{ grid_wrapper_variation }}{% endif %}">
+  {% for row in rows %}
+    <div class="l-grid__item">
+      {{ row.content }}
+    </div>
+  {% endfor %}
+</div>
+
+{% if pl_class %}
+  </div>
+{% endif %}

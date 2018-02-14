@@ -1,0 +1,81 @@
+<div class="m-share">
+  <p class="m-share__text">{{ 'Share This: '|t }}</p>
+  <div class="m-share__icons-wrapper">
+
+    {% if 'facebook' in services %}
+      <button class="m-share__icon st-custom-button" data-network="facebook">
+        {% include "@atoms/icon/01-icon.twig"
+          with {
+            icon: {
+              id: 'ico-facebook',
+              variation: '--sml',
+              title: 'Share on Facebook',
+              sprite: 'sprite-social'
+            }
+          }
+        %}
+      </button>
+    {% endif %}
+
+    {% if 'twitter' in services %}
+      <button class="m-share__icon st-custom-button" data-network="twitter">
+        {% include "@atoms/icon/01-icon.twig"
+          with {
+            icon: {
+              id: 'ico-twitter',
+              variation: '--sml',
+              title: 'Share on Twitter',
+              sprite: 'sprite-social'
+            }
+          }
+        %}
+      </button>
+    {% endif %}
+
+    {% if 'linkedin' in services %}
+      <button class="m-share__icon st-custom-button" data-network="instagram">
+        {% include "@atoms/icon/01-icon.twig"
+          with {
+            icon: {
+              id: 'ico-instagram',
+              variation: '--sml',
+              title: 'Share on instagram',
+              sprite: 'sprite-social'
+            }
+          }
+        %}
+      </button>
+    {% endif %}
+
+    {% if email_enabled %}
+      <a class="m-share__icon" href="{{ mailto }}">
+        {% include "@atoms/icon/01-icon.twig"
+          with {
+            icon: {
+              id: 'ico-email',
+              variation: '--sml',
+              title: 'Share by Email',
+              sprite: 'sprite-social'
+            }
+          }
+        %}
+      </a>
+    {% endif %}
+
+    {% if print_enabled %}
+      <button class="m-share__icon" data-share-this-component="print">
+        {% include "@atoms/icon/01-icon.twig"
+          with {
+            icon: {
+              id: 'ico-print',
+              variation: '--sml',
+              title: 'Print',
+              sprite: 'sprite-social'
+            }
+          }
+        %}
+      </button>
+    {% endif %}
+
+  </div>
+</div>

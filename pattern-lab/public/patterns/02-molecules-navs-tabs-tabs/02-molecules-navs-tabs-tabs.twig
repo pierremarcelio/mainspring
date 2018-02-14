@@ -1,0 +1,8 @@
+{% if primary %}
+  <span class="visually-hidden">{{ 'Primary tabs'|t }}</span>
+  <ul class="m-tabs--primary">{{ primary }}</ul>
+{% endif %}
+{% if secondary %}
+  <span class="visually-hidden">{{ 'Secondary tabs'|t }}</span>
+  <ul class="m-tabs--secondary">{{ secondary }}</ul>
+{% endif %}
